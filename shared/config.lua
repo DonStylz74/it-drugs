@@ -95,7 +95,7 @@ Config.Zones = {
 
 Config.PlantDistance = 1.5 -- minimum Distance between two plants
 
-Config.OnlyAllowedGrounds = false -- Allow drug growth only on allowed grounds
+Config.OnlyAllowedGrounds = true -- Allow drug growth only on allowed grounds
 Config.AllowedGrounds = {   -- Allowed ground types for planting
     1109728704, -- fields
     -1942898710, -- grass/dirt
@@ -156,25 +156,76 @@ Config.PlantTypes = {
         [2] = {"bkr_prop_weed_bud_02b", 0},
         [3] = {"bkr_prop_weed_bud_02a", 0},
     },
+    ["coca_plant"] = {
+        [1] = {"bzzz_plant_coca_a", 0},
+        [2] = {"bzzz_plant_coca_b", 0},
+        [3] = {"bzzz_plant_coca_c", 0},
+    },
 }
 
 Config.Plants = { -- Create seeds for drugs
 
-    ['weed_lemonhaze_seed'] = {
+    ['weed_ak47_seed'] = {
         growthTime = false, -- Cutsom growth time in minutes false if you want to use the global growth time
-        label = 'Lemon Haze', --
+        label = 'AK47', --
         plantType = 'plant1', -- Choose plant types from (plant1, plant2, small_plant)
         products = { -- Item the plant is going to produce when harvested with the max amount
-            ['weed_lemonhaze'] = {min = 1, max = 4},  
+            ['weed_ak47'] = {min = 12, max = 32},  
             --['other_item'] = {min = 1, max = 2}
         },
         seed = {
             chance = 50, -- Percent of getting back the seed
             min = 1, -- Min amount of seeds
+            max = 5 -- Max amount of seeds
+        },
+        time = 3000 -- Time it takes to plant/harvest in miliseconds
+    },
+    ['weed_ogkush_seed'] = {
+        growthTime = false, -- Cutsom growth time in minutes false if you want to use the global growth time
+        label = 'OG Kush', --
+        plantType = 'plant1', -- Choose plant types from (plant1, plant2, small_plant)
+        products = { -- Item the plant is going to produce when harvested with the max amount
+            ['weed_ogkush'] = {min = 10, max = 30},  
+            --['other_item'] = {min = 1, max = 2}
+        },
+        seed = {
+            chance = 40, -- Percent of getting back the seed
+            min = 1, -- Min amount of seeds
+            max = 4 -- Max amount of seeds
+        },
+        time = 3000 -- Time it takes to plant/harvest in miliseconds
+    },
+    ['weed_purplehaze_seed'] = {
+        growthTime = false, -- Cutsom growth time in minutes false if you want to use the global growth time
+        label = 'Purple Haze', --
+        plantType = 'plant2', -- Choose plant types from (plant1, plant2, small_plant)
+        products = { -- Item the plant is going to produce when harvested with the max amount
+            ['weed_purplehaze'] = {min = 8, max = 28},  
+            --['other_item'] = {min = 1, max = 2}
+        },
+        seed = {
+            chance = 30, -- Percent of getting back the seed
+            min = 1, -- Min amount of seeds
+            max = 3 -- Max amount of seeds
+        },
+        time = 3000 -- Time it takes to plant/harvest in miliseconds
+    },
+    ['weed_skunk_seed'] = {
+        growthTime = false, -- Cutsom growth time in minutes false if you want to use the global growth time
+        label = 'Skunk', --
+        plantType = 'plant2', -- Choose plant types from (plant1, plant2, small_plant)
+        products = { -- Item the plant is going to produce when harvested with the max amount
+            ['weed_skunk'] = {min = 6, max = 20},  
+            --['other_item'] = {min = 1, max = 2}
+        },
+        seed = {
+            chance = 20, -- Percent of getting back the seed
+            min = 1, -- Min amount of seeds
             max = 2 -- Max amount of seeds
         },
         time = 3000 -- Time it takes to plant/harvest in miliseconds
     },
+
     ['coca_seed'] = {
         growthTime = 45, -- Cutsom growth time in minutes false if you want to use the global growth time
         label = 'Coca Plant', --
@@ -221,17 +272,53 @@ Config.ProcessingTables = { -- Create processing table
         type = 'weed',
         model = 'bkr_prop_weed_table_01a', -- Exanples: bkr_prop_weed_table_01a, bkr_prop_meth_table01a, bkr_prop_coke_table01a
         recipes = {
-            ['joint'] = {
-                label = 'Joint',
+            ['joint_ak'] = {
+                label = 'Joint AK47',
                 ingrediants = {
-                    ['weed_lemonhaze'] = 3,
+                    ['weed_ak47'] = 1,
                     ['paper'] = 1
                 },
                 outputs = {
-                    ['joint'] = 2
+                    ['joint_ak'] = 1
                 },
                 processTime = 5,
-                failChance = 15
+                failChance = 10
+            },
+            ['joint_ogk'] = {
+                label = 'Joint OGKush',
+                ingrediants = {
+                    ['weed_ogkush'] = 1,
+                    ['paper'] = 1
+                },
+                outputs = {
+                    ['joint_ogk'] = 1
+                },
+                processTime = 5,
+                failChance = 10
+            },
+            ['joint_ph'] = {
+                label = 'Joint PurpleHaze',
+                ingrediants = {
+                    ['weed_purplehaze'] = 1,
+                    ['paper'] = 1
+                },
+                outputs = {
+                    ['joint_ph'] = 1
+                },
+                processTime = 5,
+                failChance = 10
+            },
+            ['joint_sk'] = {
+                label = 'Joint Skunk',
+                ingrediants = {
+                    ['weed_skunk'] = 1,
+                    ['paper'] = 1
+                },
+                outputs = {
+                    ['joint_sk'] = 1
+                },
+                processTime = 5,
+                failChance = 10
             },
             -- Add more recipes here like this
             --[[ ['weedbag'] = {
@@ -302,8 +389,8 @@ Config.ProcessingTables = { -- Create processing table
 Config.EnableDrugs = true -- Enable drug effects
 Config.Drugs = { -- Create you own drugs
 
-    ['joint'] = {
-        label = 'Joint',
+    ['joint_ak'] = {
+        label = 'Joint AK47',
         animation = 'smoke', -- Animations: blunt, sniff, pill
         time = 80, -- Time in seconds of the Effects
         effects = { -- Effects: runningSpeedIncrease, infinateStamina, moreStrength, healthRegen, foodRegen, drunkWalk, psycoWalk, outOfBody, cameraShake, fogEffect, confusionEffect, whiteoutEffect, intenseEffect, focusEffect
@@ -313,6 +400,43 @@ Config.Drugs = { -- Create you own drugs
             'drunkWalk'
         }
     },
+
+    ['joint_ogk'] = {
+        label = 'Joint OGKush',
+        animation = 'smoke', -- Animations: blunt, sniff, pill
+        time = 100, -- Time in seconds of the Effects
+        effects = { -- Effects: runningSpeedIncrease, infinateStamina, moreStrength, healthRegen, foodRegen, drunkWalk, psycoWalk, outOfBody, cameraShake, fogEffect, confusionEffect, whiteoutEffect, intenseEffect, focusEffect
+            'intenseEffect',
+            'healthRegen',
+            'moreStrength',
+            'drunkWalk'
+        }
+    },
+
+    ['joint_ph'] = {
+        label = 'Joint Purple Haze',
+        animation = 'smoke', -- Animations: blunt, sniff, pill
+        time = 125, -- Time in seconds of the Effects
+        effects = { -- Effects: runningSpeedIncrease, infinateStamina, moreStrength, healthRegen, foodRegen, drunkWalk, psycoWalk, outOfBody, cameraShake, fogEffect, confusionEffect, whiteoutEffect, intenseEffect, focusEffect
+            'intenseEffect',
+            'healthRegen',
+            'moreStrength',
+            'drunkWalk'
+        }
+    },
+
+    ['joint_sk'] = {
+        label = 'Joint Skunk',
+        animation = 'smoke', -- Animations: blunt, sniff, pill
+        time = 150, -- Time in seconds of the Effects
+        effects = { -- Effects: runningSpeedIncrease, infinateStamina, moreStrength, healthRegen, foodRegen, drunkWalk, psycoWalk, outOfBody, cameraShake, fogEffect, confusionEffect, whiteoutEffect, intenseEffect, focusEffect
+            'intenseEffect',
+            'healthRegen',
+            'moreStrength',
+            'drunkWalk'
+        }
+    },
+    
     ['cocaine'] = {
         label = 'Cocaine',
         animation = 'sniff', -- Animations: blunt, sniff, pill
@@ -381,8 +505,10 @@ Config.SellZones = {
         maxZ = 75.059997558594,
         drugs = {
             { item = 'cocaine', price = math.random(100, 200)},
-            { item = 'joint', price = math.random(50, 100)},
-            { item = 'weed_lemonhaze', price = math.random(50, 100)}
+            { item = 'joint_ak', price = math.random(20, 30)},
+            { item = 'joint_ogk', price = math.random(20, 30)},
+            { item = 'joint_ph', price = math.random(20, 30)},
+            { item = 'joint_sk', price = math.random(20, 30)}
         }
     },
     ['vinewood'] = {
@@ -406,8 +532,10 @@ Config.SellZones = {
         maxZ = 125.0,
         drugs = {
             { item = 'cocaine', price = math.random(100, 200)},
-            { item = 'joint', price = math.random(50, 100)},
-            { item = 'weed_lemonhaze', price = math.random(50, 100)}
+            { item = 'joint_ak', price = math.random(20, 30)},
+            { item = 'joint_ogk', price = math.random(20, 30)},
+            { item = 'joint_ph', price = math.random(20, 30)},
+            { item = 'joint_sk', price = math.random(20, 30)}
         }
     },
 }
