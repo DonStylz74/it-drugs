@@ -317,4 +317,4 @@
     client = {
         image = "cocaine_processing_table.png",
     }
-}
+},
