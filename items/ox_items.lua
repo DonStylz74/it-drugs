@@ -42,6 +42,7 @@
     }
 },
 
+
 ["weed_ak47_seed"] = {
 	label = "Weed AK47 Seed",
 	weight = 4,
@@ -130,104 +131,171 @@
     	}
 	},
 
-["paper"] = {
-    label = "Roll Papers",
-    weight = 50,
-    stack = true,
-    close = false,
-    description = "Paper",
-    client = {
-        image = "paper.png",
-    }
-},
+	['paper'] = {
+		label = 'Rolling Papers',
+		stack = true,
+		weight = 2,
+    	close = false,
+    	description = "Papers to roll Joints",
+    	client = {
+       	image = "paper.png",
+    	}
+	},
 
-["joint_ak"] = {
-    label = "Joint AK47",
-    weight = 3,
-    stack = true,
-    close = true,
-    description = "Joint AK47",
-    client = {
+	["joint_ak"] = {
+		label = "Joint AK47",
+		weight = 3,
+		stack = true,
+		close = true,
+		description = "Joint AK47",
+		client = {
         image = "joint_ak.png",
-    }
-},
+		}
+	},
 
-["joint_ogk"] = {
-    label = "Joint OGKush",
-    weight = 3,
-    stack = true,
-    close = true,
-    description = "Joint OGKush",
-    client = {
+	["joint_ogk"] = {
+		label = "Joint OGKush",
+		weight = 3,
+		stack = true,
+		close = true,
+		description = "Joint OGKush",
+		client = {
         image = "joint_ogk.png",
-    }
-},
+		}
+	},
 
-["joint_ph"] = {
-    label = "Joint Purple haze",
-    weight = 3,
-    stack = true,
-    close = true,
-    description = "Joint Purple haze",
-    client = {
+	["joint_ph"] = {
+		label = "Joint Purple haze",
+		weight = 3,
+		stack = true,
+		close = true,
+		description = "Joint Purple haze",
+		client = {
         image = "joint_ph.png",
-    }
-},
+		}
+	},
 
-["joint_sk"] = {
-    label = "Joint Skunk",
-    weight = 3,
-    stack = true,
-    close = true,
-    description = "Joint Skunk",
-    client = {
+	["joint_sk"] = {
+		label = "Joint Skunk",
+		weight = 3,
+		stack = true,
+		close = true,
+		description = "Joint Skunk",
+		client = {
         image = "joint_sk.png",
-    }
-},
+		}
+	},
 
-["coca_seed"] = {
-    label = "Coca Seed",
-    weight = 20,
-    stack = true,
-    close = true,
-    description = "Coca Seed",
-    client = {
-        image = "coca_seed.png",
-    }
-},
+	["baggie"] = {
+		label = "Empty Baggie",
+		weight = 1,
+		stack = true,
+		close = false,
+		description = "Empty Drug Baggie",
+		client = {
+			image = "baggie.png",
+		}
+	},
 
-["coca"] = {
-    label = "Coca",
-    weight = 20,
-    stack = true,
-    close = false,
-    description = "Coca",
-    client = {
-        image = "coca.png",
-    }
-},
+	["baggie_ak"] = {
+		label = "Baggie AK74",
+		weight = 2,
+		stack = true,
+		close = true,
+		description = "Weed Baggie AK74",
+		client = {
+			image = "baggie_ak.png",
+		}
+	},
 
-["nitrous"] = {
-    label = "Nitrous",
-    weight = 500,
-    stack = false,
-    close = false,
-    description = "Nitrous",
-    client = {
-        image = "nitrous.png",
-    }
-},
+	["baggie_ogk"] = {
+		label = "Baggie OGKush",
+		weight = 2,
+		stack = true,
+		close = true,
+		description = "Weed Baggie OGKush",
+		client = {
+			image = "baggie_ogk.png",
+		}
+	},
 
-["cocaine"] = {
-    label = "Cocaine",
-    weight = 20,
-    stack = true,
-    close = true,
-    description = "Small bag of cocaine",
-    client = {
-        image = "cocaine.png",
-    }
-},
+	["baggie_ph"] = {
+		label = "Baggie Purple Haze",
+		weight = 2,
+		stack = true,
+		close = true,
+		description = "Weed Baggie Purple Haze",
+		client = {
+			image = "baggie_ph.png",
+		}
+	},
+
+	["baggie_sk"] = {
+		label = "Baggie Skunk",
+		weight = 2,
+		stack = true,
+		close = true,
+		description = "Weed Baggie Skunk",
+		client = {
+			image = "baggie_sk.png",
+		}
+	},
+
+
+	["coca_seed"] = {
+    		label = "Coca Seed",
+    		weight = 8,
+    		stack = true,
+    		close = true,
+    		description = "Coca Seed",
+    		client = {
+        	image = "coca_seed.png",
+    		}
+	},
+
+	["coca"] = {
+    		label = "Coca",
+    		weight = 2,
+    		stack = true,
+    		close = false,
+    		description = "Coca",
+    		client = {
+        	image = "coca.png",
+    		}
+	},
+
+	["nitrous"] = {
+    		label = "Nitrous",
+    		weight = 25,
+    		stack = true,
+    		close = false,
+    		description = "Nitrous",
+    		client = {
+        	image = "nitrous.png",
+    		}
+	},
+
+	["cocaine"] = {
+    		label = "Cocaine",
+    		weight = 1,
+    		stack = true,
+    		close = true,
+    		description = "Cocaine",
+    		client = {
+        	image = "cocaine.png",
+    		}
+	},
+
+	["baggie_coke"] = {
+    		label = "Baggie Cocaine",
+    		weight = 2,
+    		stack = true,
+    		close = true,
+    		description = "Small bag of Cocaine",
+    		client = {
+        	image = "baggie_coke.png",
+    		}
+	},
 
 ["weed_processing_table"] = {
     label = "Weed Processing Table",
@@ -249,4 +317,4 @@
     client = {
         image = "cocaine_processing_table.png",
     }
-},
+}
