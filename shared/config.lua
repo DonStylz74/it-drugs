@@ -168,7 +168,7 @@ Config.Plants = { -- Create seeds for drugs
     ['weed_ak47_seed'] = {
         growthTime = false, -- Cutsom growth time in minutes false if you want to use the global growth time
         label = 'AK47', --
-        plantType = 'plant1', -- Choose plant types from (plant1, plant2, small_plant)
+        plantType = 'small_plant', -- Choose plant types from (plant1, plant2, small_plant)
         products = { -- Item the plant is going to produce when harvested with the max amount
             ['weed_ak47'] = {min = 12, max = 32},  
             --['other_item'] = {min = 1, max = 2}
@@ -229,9 +229,9 @@ Config.Plants = { -- Create seeds for drugs
     ['coca_seed'] = {
         growthTime = 45, -- Cutsom growth time in minutes false if you want to use the global growth time
         label = 'Coca Plant', --
-        plantType = 'small_plant', -- Choose plant types from (plant1, plant2, small_plant) also you can change plants yourself in main/client.lua line: 2
+        plantType = 'coca_plant', -- Choose plant types from (plant1, plant2, small_plant) also you can change plants yourself in main/client.lua line: 2
         products = { -- Item the plant is going to produce when harvested with the max amount
-            ['coca']= {min = 1, max = 2}
+            ['coca']= {min = 5, max = 15}
         },
         seed = {
             chance = 50, -- Percent of getting back the seed
@@ -320,6 +320,55 @@ Config.ProcessingTables = { -- Create processing table
                 processTime = 5,
                 failChance = 10
             },
+            ['baggie_ak'] = {
+                label = 'Baggie AK47',
+                ingrediants = {
+                    ['weed_ak47'] = 1,
+                    ['baggie'] = 1
+                },
+                outputs = {
+                    ['baggie_ak'] = 1
+                },
+                processTime = 5,
+                failChance = 10
+            },
+            ['baggie_ogk'] = {
+                label = 'Baggie OGKush',
+                ingrediants = {
+                    ['weed_ogkush'] = 1,
+                    ['baggie'] = 1
+                },
+                outputs = {
+                    ['baggie_ogk'] = 1
+                },
+                processTime = 5,
+                failChance = 10
+            },
+            ['baggie_ph'] = {
+                label = 'Baggie Purple Haze',
+                ingrediants = {
+                    ['weed_purplehaze'] = 1,
+                    ['baggie'] = 1
+                },
+                outputs = {
+                    ['baggie_ph'] = 1
+                },
+                processTime = 5,
+                failChance = 10
+            },
+            ['baggie_sk'] = {
+                label = 'Baggie Skunk',
+                ingrediants = {
+                    ['weed_skunk'] = 1,
+                    ['baggie'] = 1
+                },
+                outputs = {
+                    ['baggie_sk'] = 1
+                },
+                processTime = 5,
+                failChance = 10
+            },
+            
             -- Add more recipes here like this
             --[[ ['weedbag'] = {
                 label = 'Weed Bag',
@@ -348,6 +397,18 @@ Config.ProcessingTables = { -- Create processing table
                 },
                 outputs = {
                     ['cocaine'] = 2
+                },
+                processTime = 10,
+                failChance = 15
+            },
+            ['baggie_coke'] = {
+                label = 'Baggie Cocaine',
+                ingrediants = {
+                    ['cocaine'] = 2,
+                    ['baggie'] = 1
+                },
+                outputs = {
+                    ['baggie_coke'] = 1
                 },
                 processTime = 10,
                 failChance = 15
@@ -394,10 +455,10 @@ Config.Drugs = { -- Create you own drugs
         animation = 'smoke', -- Animations: blunt, sniff, pill
         time = 80, -- Time in seconds of the Effects
         effects = { -- Effects: runningSpeedIncrease, infinateStamina, moreStrength, healthRegen, foodRegen, drunkWalk, psycoWalk, outOfBody, cameraShake, fogEffect, confusionEffect, whiteoutEffect, intenseEffect, focusEffect
-            'intenseEffect',
+            'fogEffect',
+            'confusionEffect',
             'healthRegen',
-            'moreStrength',
-            'drunkWalk'
+            ''
         }
     },
 
@@ -406,10 +467,10 @@ Config.Drugs = { -- Create you own drugs
         animation = 'smoke', -- Animations: blunt, sniff, pill
         time = 100, -- Time in seconds of the Effects
         effects = { -- Effects: runningSpeedIncrease, infinateStamina, moreStrength, healthRegen, foodRegen, drunkWalk, psycoWalk, outOfBody, cameraShake, fogEffect, confusionEffect, whiteoutEffect, intenseEffect, focusEffect
-            'intenseEffect',
+            'fogEffect',
+            'confusionEffect',
             'healthRegen',
-            'moreStrength',
-            'drunkWalk'
+            'whiteoutEffect'
         }
     },
 
@@ -419,6 +480,7 @@ Config.Drugs = { -- Create you own drugs
         time = 125, -- Time in seconds of the Effects
         effects = { -- Effects: runningSpeedIncrease, infinateStamina, moreStrength, healthRegen, foodRegen, drunkWalk, psycoWalk, outOfBody, cameraShake, fogEffect, confusionEffect, whiteoutEffect, intenseEffect, focusEffect
             'intenseEffect',
+            'fogEffect',
             'healthRegen',
             'moreStrength',
             'drunkWalk'
@@ -431,12 +493,15 @@ Config.Drugs = { -- Create you own drugs
         time = 150, -- Time in seconds of the Effects
         effects = { -- Effects: runningSpeedIncrease, infinateStamina, moreStrength, healthRegen, foodRegen, drunkWalk, psycoWalk, outOfBody, cameraShake, fogEffect, confusionEffect, whiteoutEffect, intenseEffect, focusEffect
             'intenseEffect',
+            'whiteoutEffect',
+            'fogEffect',
+            'confusionEffect',
             'healthRegen',
             'moreStrength',
             'drunkWalk'
         }
     },
-    
+
     ['cocaine'] = {
         label = 'Cocaine',
         animation = 'sniff', -- Animations: blunt, sniff, pill
@@ -504,11 +569,15 @@ Config.SellZones = {
         minZ = 18.035144805908,
         maxZ = 75.059997558594,
         drugs = {
-            { item = 'cocaine', price = math.random(100, 200)},
-            { item = 'joint_ak', price = math.random(20, 30)},
-            { item = 'joint_ogk', price = math.random(20, 30)},
-            { item = 'joint_ph', price = math.random(20, 30)},
-            { item = 'joint_sk', price = math.random(20, 30)}
+            { item = 'baggie_coke', price = math.random(75, 150)},
+            { item = 'joint_ak', price = math.random(15, 25)},
+            { item = 'joint_ogk', price = math.random(18, 25)},
+            { item = 'joint_ph', price = math.random(21, 30)},
+            { item = 'joint_sk', price = math.random(25, 30)},
+            { item = 'baggie_ak', price = math.random(18, 30)},
+            { item = 'baggie_ogk', price = math.random(21, 30)},
+            { item = 'baggie_ph', price = math.random(24, 35)},
+            { item = 'baggie_sk', price = math.random(27, 35)}
         }
     },
     ['vinewood'] = {
@@ -531,11 +600,15 @@ Config.SellZones = {
         minZ = 45.0,
         maxZ = 125.0,
         drugs = {
-            { item = 'cocaine', price = math.random(100, 200)},
-            { item = 'joint_ak', price = math.random(20, 30)},
-            { item = 'joint_ogk', price = math.random(20, 30)},
-            { item = 'joint_ph', price = math.random(20, 30)},
-            { item = 'joint_sk', price = math.random(20, 30)}
+            { item = 'baggie_coke', price = math.random(75, 150)},
+            { item = 'joint_ak', price = math.random(15, 25)},
+            { item = 'joint_ogk', price = math.random(18, 25)},
+            { item = 'joint_ph', price = math.random(21, 30)},
+            { item = 'joint_sk', price = math.random(25, 30)},
+            { item = 'baggie_ak', price = math.random(18, 30)},
+            { item = 'baggie_ogk', price = math.random(21, 30)},
+            { item = 'baggie_ph', price = math.random(24, 35)},
+            { item = 'baggie_sk', price = math.random(27, 35)}
         }
     },
 }
