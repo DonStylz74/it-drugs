@@ -42,25 +42,146 @@
     }
 },
 
-["weed_lemonhaze_seed"] = {
-    label = "Weed Lemonhaze Seed",
-    weight = 20,
+["weed_ak47_seed"] = {
+	label = "Weed AK47 Seed",
+	weight = 4,
+	stack = true,
+	close = true,
+	description = "Weed AK47 Seed",
+	client = {
+		image = "weed_ak47_seed.png",
+	}
+	},
+
+["weed_ak47"] = {
+	label = "Weed AK47",
+	weight = 1,
+	stack = true,
+	close = false,
+	description = "Weed AK47",
+	client = {
+		image = "weed_ak47.png",
+	}
+},
+
+	['weed_ogkush_seed'] = {
+		label = 'OG Kush Seed',
+		weight = 6,
+		stack = true,
+    	close = true,
+    	description = "Weed OG Kush Seed",
+    	client = {
+       	image = "weed_ogkush_seed.png",
+    	}
+	},
+
+	['weed_ogkush'] = {
+		label = 'OG Kush Bud',
+		weight = 1,
+		stack = true,
+    	close = false,
+    	description = "Weed OG Kush",
+    	client = {
+       	image = "weed_ogkush.png",
+    	}
+	},
+
+	['weed_purplehaze_seed'] = {
+		label = 'Purple Haze Seed',
+		stack = true,
+		weight = 6,
+    	close = true,
+    	description = "Weed Purple Haze Seed",
+    	client = {
+       	image = "weed_purplehaze_seed.png",
+    	}
+	},
+
+	['weed_purplehaze'] = {
+		label = 'Purple Haze Bud',
+		stack = true,
+		weight = 1,
+    	close = false,
+    	description = "Weed Purple Haze",
+    	client = {
+       	image = "weed_purplehaze.png",
+    	}
+	},
+
+	['weed_skunk_seed'] = {
+		label = 'Skunk Seed',
+		stack = true,
+		weight = 6,
+    	close = true,
+    	description = "Weed Skunk Seed",
+    	client = {
+       	image = "weed_skunk_seed.png",
+    	}
+	},
+
+	['weed_skunk'] = {
+		label = 'Skunk Bud',
+		stack = true,
+		weight = 1,
+    	close = false,
+    	description = "Weed Skunk",
+    	client = {
+       	image = "weed_skunk.png",
+    	}
+	},
+
+["paper"] = {
+    label = "Roll Papers",
+    weight = 50,
     stack = true,
-    close = true,
-    description = "Weed Lemonhaze Seed",
+    close = false,
+    description = "Paper",
     client = {
-        image = "weed_lemonhaze_seed.png",
+        image = "paper.png",
     }
 },
 
-["weed_lemonhaze"] = {
-    label = "Weed Lemonhaze",
-    weight = 20,
+["joint_ak"] = {
+    label = "Joint AK47",
+    weight = 3,
     stack = true,
-    close = false,
-    description = "Weed Lemonhaze",
+    close = true,
+    description = "Joint AK47",
     client = {
-        image = "weed_lemonhaze.png",
+        image = "joint_ak.png",
+    }
+},
+
+["joint_ogk"] = {
+    label = "Joint OGKush",
+    weight = 3,
+    stack = true,
+    close = true,
+    description = "Joint OGKush",
+    client = {
+        image = "joint_ogk.png",
+    }
+},
+
+["joint_ph"] = {
+    label = "Joint Purple haze",
+    weight = 3,
+    stack = true,
+    close = true,
+    description = "Joint Purple haze",
+    client = {
+        image = "joint_ph.png",
+    }
+},
+
+["joint_sk"] = {
+    label = "Joint Skunk",
+    weight = 3,
+    stack = true,
+    close = true,
+    description = "Joint Skunk",
+    client = {
+        image = "joint_sk.png",
     }
 },
 
@@ -86,17 +207,6 @@
     }
 },
 
-["paper"] = {
-    label = "Paper",
-    weight = 50,
-    stack = true,
-    close = false,
-    description = "Paper",
-    client = {
-        image = "paper.png",
-    }
-},
-
 ["nitrous"] = {
     label = "Nitrous",
     weight = 500,
@@ -116,17 +226,6 @@
     description = "Small bag of cocaine",
     client = {
         image = "cocaine.png",
-    }
-},
-
-["joint"] = {
-    label = "Joint",
-    weight = 10,
-    stack = true,
-    close = true,
-    description = "Joint",
-    client = {
-        image = "joint.png",
     }
 },
 
@@ -150,4 +249,4 @@
     client = {
         image = "cocaine_processing_table.png",
     }
-}
+},
