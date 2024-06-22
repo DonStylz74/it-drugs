@@ -281,8 +281,8 @@ Config.ProcessingTables = { -- Create processing table
                 outputs = {
                     ['joint_ak'] = 1
                 },
-                processTime = 5,
-                failChance = 10
+                processTime = 7,
+                failChance = 5
             },
             ['joint_ogk'] = {
                 label = 'Joint OGKush',
@@ -293,8 +293,8 @@ Config.ProcessingTables = { -- Create processing table
                 outputs = {
                     ['joint_ogk'] = 1
                 },
-                processTime = 5,
-                failChance = 10
+                processTime = 7,
+                failChance = 5
             },
             ['joint_ph'] = {
                 label = 'Joint PurpleHaze',
@@ -305,8 +305,8 @@ Config.ProcessingTables = { -- Create processing table
                 outputs = {
                     ['joint_ph'] = 1
                 },
-                processTime = 5,
-                failChance = 10
+                processTime = 7,
+                failChance = 5
             },
             ['joint_sk'] = {
                 label = 'Joint Skunk',
@@ -317,9 +317,11 @@ Config.ProcessingTables = { -- Create processing table
                 outputs = {
                     ['joint_sk'] = 1
                 },
-                processTime = 5,
-                failChance = 10
+                processTime = 7,
+                failChance = 5
             },
+
+
             ['baggie_ak'] = {
                 label = 'Baggie AK47',
                 ingrediants = {
@@ -329,7 +331,7 @@ Config.ProcessingTables = { -- Create processing table
                 outputs = {
                     ['baggie_ak'] = 1
                 },
-                processTime = 5,
+                processTime = 15,
                 failChance = 10
             },
             ['baggie_ogk'] = {
@@ -341,7 +343,7 @@ Config.ProcessingTables = { -- Create processing table
                 outputs = {
                     ['baggie_ogk'] = 1
                 },
-                processTime = 5,
+                processTime = 15,
                 failChance = 10
             },
             ['baggie_ph'] = {
@@ -353,7 +355,7 @@ Config.ProcessingTables = { -- Create processing table
                 outputs = {
                     ['baggie_ph'] = 1
                 },
-                processTime = 5,
+                processTime = 15,
                 failChance = 10
             },
             ['baggie_sk'] = {
@@ -365,10 +367,59 @@ Config.ProcessingTables = { -- Create processing table
                 outputs = {
                     ['baggie_sk'] = 1
                 },
-                processTime = 5,
+                processTime = 15,
                 failChance = 10
             },
-            
+
+
+            ['ozjar_ak'] = {
+                label = 'Oz Jar AK47',
+                ingrediants = {
+                    ['weed_ak47'] = 28,
+                    ['empty_jar'] = 1
+                },
+                outputs = {
+                    ['ozjar_ak'] = 1
+                },
+                processTime = 25,
+                failChance = 15
+            },
+            ['ozjar_ogk'] = {
+                label = 'Oz Jar OGKush',
+                ingrediants = {
+                    ['weed_ogkush'] = 28,
+                    ['empty_jar'] = 1
+                },
+                outputs = {
+                    ['ozjar_ogk'] = 1
+                },
+                processTime = 25,
+                failChance = 15
+            },
+            ['ozjar_ph'] = {
+                label = 'Oz Jar Purple Haze',
+                ingrediants = {
+                    ['weed_purplehaze'] = 28,
+                    ['empty_jar'] = 1
+                },
+                outputs = {
+                    ['ozjar_ph'] = 1
+                },
+                processTime = 25,
+                failChance = 15
+            },
+            ['ozjar_sk'] = {
+                label = 'Oz Jar Skunk',
+                ingrediants = {
+                    ['weed_skunk'] = 28,
+                    ['empty_jar'] = 1
+                },
+                outputs = {
+                    ['ozjar_sk'] = 1
+                },
+                processTime = 25,
+                failChance = 15
+            },
             -- Add more recipes here like this
             --[[ ['weedbag'] = {
                 label = 'Weed Bag',
@@ -398,7 +449,7 @@ Config.ProcessingTables = { -- Create processing table
                 outputs = {
                     ['cocaine'] = 2
                 },
-                processTime = 10,
+                processTime = 15,
                 failChance = 15
             },
             ['baggie_coke'] = {
@@ -411,6 +462,18 @@ Config.ProcessingTables = { -- Create processing table
                     ['baggie_coke'] = 1
                 },
                 processTime = 10,
+                failChance = 10
+            },
+            ['brick_coke'] = {
+                label = 'Oz Brick of Cocaine',
+                ingrediants = {
+                    ['cocaine'] = 28,
+                    ['baggie_1oz'] = 1
+                },
+                outputs = {
+                    ['brick_coke'] = 1
+                },
+                processTime = 25,
                 failChance = 15
             },
         }
