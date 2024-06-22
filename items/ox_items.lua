@@ -242,6 +242,61 @@
 	},
 
 
+	["empty_jar"] = {
+		label = "Empty Oz Jar",
+		weight = 3,
+		stack = true,
+		close = false,
+		description = "Empty Weed Oz Jar",
+		client = {
+			image = "empty_jar.png",
+		}
+	},
+
+	["ozjar_ak"] = {
+		label = "Oz Jar of AK47",
+		weight = 30,
+		stack = true,
+		close = true,
+		description = "Oz Jar of AK74 Weed",
+		client = {
+			image = "ozjar_ak.png",
+		}
+	},
+
+	["ozjar_ogk"] = {
+		label = "Oz Jar of OGKush",
+		weight = 30,
+		stack = true,
+		close = true,
+		description = "Oz Jar of OGKush Weed",
+		client = {
+			image = "ozjar_ogk.png",
+		}
+	},
+
+	["ozjar_ph"] = {
+		label = "Oz Jar of PurpleHaze",
+		weight = 30,
+		stack = true,
+		close = true,
+		description = "Oz Jar of PurpleHaze Weed",
+		client = {
+			image = "ozjar_ph.png",
+		}
+	},
+
+	["ozjar_sk"] = {
+		label = "Oz Jar of Skunk",
+		weight = 30,
+		stack = true,
+		close = true,
+		description = "Oz Jar of Skunk Weed",
+		client = {
+			image = "ozjar_sk.png",
+		}
+	},
+
 	["coca_seed"] = {
     		label = "Coca Seed",
     		weight = 8,
@@ -297,24 +352,46 @@
     		}
 	},
 
-["weed_processing_table"] = {
-    label = "Weed Processing Table",
-    weight = 1000,
-    stack = false,
-    close = true,
-    description = "Process some weed",
-    client = {
-        image = "weed_processing_table.png",
-    }
-},
+	["baggie_1oz"] = {
+		label = "Empty 1Oz Baggie",
+		weight = 2,
+		stack = true,
+		close = false,
+		description = "Empty 1Oz Drug Baggie",
+		client = {
+			image = "baggie_1oz.png",
+		}
+	},
 
-["cocaine_processing_table"] = {
-    label = "Cocaine Processing Table",
-    weight = 1000,
-    stack = false,
-    close = true,
-    description = "Process some cocaine",
-    client = {
-        image = "cocaine_processing_table.png",
-    }
-},
+	["brick_coke"] = {
+    		label = "Oz Brick of Cocaine",
+    		weight = 30,
+    		stack = true,
+    		close = true,
+    		description = "Small bag of Cocaine",
+    		client = {
+        	image = "baggie_coke.png",
+    		}
+	},
+
+	["weed_processing_table"] = {
+		label = "Weed Processing Table",
+		weight = 1000,
+		stack = false,
+		close = true,
+		description = "Process some weed",
+		client = {
+		image = "weed_processing_table.png",
+		}
+	},
+
+	["cocaine_processing_table"] = {
+		label = "Cocaine Processing Table",
+		weight = 1000,
+		stack = false,
+		close = true,
+		description = "Process some cocaine",
+		client = {
+		image = "cocaine_processing_table.png",
+		}
+	},
