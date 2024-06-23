@@ -51,10 +51,43 @@ Config.GlobalGrowTime = 30 -- Time in minutes for a plant to grow
 Config.Zones = {
     ['weed_zone_one'] = { -- Zone id (Musst be unique)
         coords = {
-            vector2(2058.4727, 4878.3384), -- Zone coords
-            vector2(2005.5208, 4929.1909),
-            vector2(1979.8605, 4903.5918),
-            vector2(2031.4441, 4851.1611),
+            vector2(5193.7534, -5194.3188), -- Zone coords  Weed --  Cayo Perico island
+            vector2(5223.5186, -5184.6665), 
+            vector2(5222.6567, -5144.0562), 
+            vector2(5195.5068, -5163.0142), 
+        },
+        growMultiplier = 2, -- GlobalGrowTime / growMultiplier = Time in minutes for a plant to grow in this zone
+        
+        blip = {
+            display = true, -- Display blip on map
+            sprite = 466, -- Select blip from (https://docs.fivem.net/docs/game-references/blips/)
+            displayColor = 2, -- Select blip color from (https://docs.fivem.net/docs/game-references/blips/)
+            displayText = 'Grow Zone Weed',
+        },
+        exclusive = {'weed_ak47_seed', 'weed_ogkush_seed', 'weed_purplehaze_seed' ,'weed_skunk_seed'} -- Types of drugs that will be affected in this are.
+    },
+    ['coke_zone_one'] = { -- Zone id (Musst be unique)
+        coords = {
+            vector2(5321.0454, -5238.9775), -- Zone coords Cocaine --  Cayo Perico island
+            vector2(5339.3867, -5219.6318), 
+            vector2(5304.3071, -5184.5586), 
+            vector2(5285.4985, -5207.1982), 
+        },
+        growMultiplier = 2, -- GlobalGrowTime / growMultiplier = Time in minutes for a plant to grow in this zone
+        blip = {
+            display = true, -- Display blip on map
+            sprite = 466, -- Select blip from (https://docs.fivem.net/docs/game-references/blips/)
+            displayColor = 0, -- Select blip color from (https://docs.fivem.net/docs/game-references/blips/)
+            displayText = 'Grow Zone Cocaine',
+        },
+        exclusive = {'coca_seed'} -- Types of drugs that will be affected in this are.
+    },
+  --[[  ['weed_zone_two'] = { -- Zone id (Musst be unique)
+        coords = {
+            vector2(5193.7534, -5194.3188), -- Zone coords  Weed --  Cayo Perico island
+            vector2(5223.5186, -5184.6665), 
+            vector2(5222.6567, -5144.0562), 
+            vector2(5195.5068, -5163.0142), 
         },
         growMultiplier = 2, -- GlobalGrowTime / growMultiplier = Time in minutes for a plant to grow in this zone
         
@@ -62,26 +95,10 @@ Config.Zones = {
             display = true, -- Display blip on map
             sprite = 469, -- Select blip from (https://docs.fivem.net/docs/game-references/blips/)
             displayColor = 2, -- Select blip color from (https://docs.fivem.net/docs/game-references/blips/)
-            displayText = 'Weed Zone',
+            displayText = 'Grow Zone Weed',
         },
-        exclusive = {'weed_lemonhaze_seed'} -- Types of drugs that will be affected in this are.
-    },
-    ['weed_zone_two'] = { -- Zone id (Musst be unique)
-        coords = {
-            vector2(2068.0283, 4887.9902), -- Zone coords
-            vector2(2098.0339, 4917.5977),
-            vector2(2045.6102, 4969.4971),
-            vector2(2016.1580, 4940.1895),
-        },
-        growMultiplier = 2, -- GlobalGrowTime / growMultiplier = Time in minutes for a plant to grow in this zone
-        blip = {
-            display = true, -- Display blip on map
-            sprite = 469, -- Select blip from (https://docs.fivem.net/docs/game-references/blips/)
-            displayColor = 2, -- Select blip color from (https://docs.fivem.net/docs/game-references/blips/)
-            displayText = 'Weed Zone',
-        },
-        exclusive = {'weed_lemonhaze_seed'} -- Types of drugs that will be affected in this are.
-    },
+        exclusive = {'weed_ak47_seed', 'weed_ogkush_seed', 'weed_purplehaze_seed' ,'weed_skunk_seed'} -- Types of drugs that will be affected in this are.
+    },]]--
 }
 
 
@@ -153,8 +170,8 @@ Config.PlantTypes = {
     },
     ["small_plant"] = {
         [1] = {"bkr_prop_weed_bud_02b", 0},
-        [2] = {"bkr_prop_weed_bud_02b", 0},
-        [3] = {"bkr_prop_weed_bud_02a", 0},
+        [2] = {"prop_weed_02", 0},
+        [3] = {"prop_weed_01", 0},
     },
     ["coca_plant"] = {
         [1] = {"bzzz_plant_coca_a", 0},
@@ -181,7 +198,7 @@ Config.Plants = { -- Create seeds for drugs
         time = 3000 -- Time it takes to plant/harvest in miliseconds
     },
     ['weed_ogkush_seed'] = {
-        growthTime = false, -- Cutsom growth time in minutes false if you want to use the global growth time
+        growthTime = 40, -- Cutsom growth time in minutes false if you want to use the global growth time
         label = 'OG Kush', --
         plantType = 'plant1', -- Choose plant types from (plant1, plant2, small_plant)
         products = { -- Item the plant is going to produce when harvested with the max amount
@@ -196,7 +213,7 @@ Config.Plants = { -- Create seeds for drugs
         time = 3000 -- Time it takes to plant/harvest in miliseconds
     },
     ['weed_purplehaze_seed'] = {
-        growthTime = false, -- Cutsom growth time in minutes false if you want to use the global growth time
+        growthTime = 50, -- Cutsom growth time in minutes false if you want to use the global growth time
         label = 'Purple Haze', --
         plantType = 'plant2', -- Choose plant types from (plant1, plant2, small_plant)
         products = { -- Item the plant is going to produce when harvested with the max amount
@@ -211,7 +228,7 @@ Config.Plants = { -- Create seeds for drugs
         time = 3000 -- Time it takes to plant/harvest in miliseconds
     },
     ['weed_skunk_seed'] = {
-        growthTime = false, -- Cutsom growth time in minutes false if you want to use the global growth time
+        growthTime = 60, -- Cutsom growth time in minutes false if you want to use the global growth time
         label = 'Skunk', --
         plantType = 'plant2', -- Choose plant types from (plant1, plant2, small_plant)
         products = { -- Item the plant is going to produce when harvested with the max amount
@@ -227,7 +244,7 @@ Config.Plants = { -- Create seeds for drugs
     },
 
     ['coca_seed'] = {
-        growthTime = 45, -- Cutsom growth time in minutes false if you want to use the global growth time
+        growthTime = 50, -- Cutsom growth time in minutes false if you want to use the global growth time
         label = 'Coca Plant', --
         plantType = 'coca_plant', -- Choose plant types from (plant1, plant2, small_plant) also you can change plants yourself in main/client.lua line: 2
         products = { -- Item the plant is going to produce when harvested with the max amount
@@ -432,7 +449,7 @@ Config.ProcessingTables = { -- Create processing table
                 },
                 processTime = 10,
                 failChance = 15
-            } ]]
+            } ]]--
         }
     },
     
