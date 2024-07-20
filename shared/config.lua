@@ -35,7 +35,7 @@ Config.Webhook = {
 Config.EnableDealers = true -- Enable drug dealer system
 
 Config.DrugDealers = {
-    ['seed_dealer'] = { -- Dealer id (Musst be unique)
+   --[[ ['seed_dealer'] = { -- Dealer id (Musst be unique)
         label = 'Seed Dealer', -- Dealer name
         locations = { -- Dealer will spawn at one of these locations
             vector4(-462.8489, 1101.5592, 326.6819, 166.9773),
@@ -53,7 +53,7 @@ Config.DrugDealers = {
             ['weed_lemonhaze_seed'] = {min = 100, max = 200}, -- min/max price
             ['coca_seed'] = {min = 100, max = 300},
         }
-    },
+    }, ]]--
 }
 
 --- Growing Related Settings
@@ -76,23 +76,21 @@ Config.GlobalGrowTime = 30 -- Time in minutes for a plant to grow
 Config.Zones = {
     ['weed_zone_one'] = { -- Zone id (Musst be unique)
         points = {
-            vec3(2031.0, 4853.0, 43.0),
-            vec3(2007.0, 4877.0, 43.0),
-            vec3(1981.0, 4903.0, 43.0),
-            vec3(2006.0, 4929.0, 43.0),
-            vec3(2032.0, 4903.0, 43.0),
-            vec3(2057.0, 4878.0, 43.0),
+            vec3(5193.7534, -5194.3188, 43.0), -- Zone coords  Weed --  Cayo Perico island
+            vec3(5223.5186, -5184.6665, 43.0),
+            vec3(5222.6567, -5144.0562, 43.0),
+            vec3(5195.5068, -5163.0142, 43.0),
         },
-        thickness = 4.0,
+        thickness = 8.0,
         growMultiplier = 2, -- GlobalGrowTime / growMultiplier = Time in minutes for a plant to grow in this zone
         
         blip = {
             display = true, -- Display blip on map
-            sprite = 469, -- Select blip from (https://docs.fivem.net/docs/game-references/blips/)
+            sprite = 466, -- Select blip from (https://docs.fivem.net/docs/game-references/blips/)
             displayColor = 2, -- Select blip color from (https://docs.fivem.net/docs/game-references/blips/)
-            displayText = 'Weed Zone',
+            displayText = 'Grow Zone Weed',
         },
-        exclusive = {'weed_lemonhaze_seed'} -- Types of drugs that will be affected in this are.
+        exclusive = {'weed_ak47_seed', 'weed_ogkush_seed', 'weed_purplehaze_seed' ,'weed_skunk_seed'} -- Types of drugs that will be affected in this are.
     },
     ['weed_zone_two'] = { -- Zone id (Musst be unique)
         points = {
