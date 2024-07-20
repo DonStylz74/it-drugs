@@ -87,29 +87,27 @@ Config.Zones = {
         blip = {
             display = true, -- Display blip on map
             sprite = 466, -- Select blip from (https://docs.fivem.net/docs/game-references/blips/)
-            displayColor = 2, -- Select blip color from (https://docs.fivem.net/docs/game-references/blips/)
+            displayColor = 0, -- Select blip color from (https://docs.fivem.net/docs/game-references/blips/)
             displayText = 'Grow Zone Weed',
         },
         exclusive = {'weed_ak47_seed', 'weed_ogkush_seed', 'weed_purplehaze_seed' ,'weed_skunk_seed'} -- Types of drugs that will be affected in this are.
     },
     ['weed_zone_two'] = { -- Zone id (Musst be unique)
         points = {
-            vec3(2067.0, 4890.0, 41.0),
-            vec3(2043.0, 4914.0, 41.0),
-            vec3(2017.0, 4940.0, 41.0),
-            vec3(2045.0, 4969.0, 41.0),
-            vec3(2069.0, 4946.0, 41.0),
-            vec3(2097.0, 4918.0, 41.0),
+            vec3(5321.0454, -5238.9775, 41.0), -- Zone coords Cocaine --  Cayo Perico island
+            vec3(5339.3867, -5219.6318, 41.0),
+            vec3(5304.3071, -5184.5586),
+            vec3(5285.4985, -5207.1982, 41.0),
         },
         thickness = 4.0,
         growMultiplier = 2, -- GlobalGrowTime / growMultiplier = Time in minutes for a plant to grow in this zone
         blip = {
             display = true, -- Display blip on map
-            sprite = 469, -- Select blip from (https://docs.fivem.net/docs/game-references/blips/)
+            sprite = 466, -- Select blip from (https://docs.fivem.net/docs/game-references/blips/)
             displayColor = 2, -- Select blip color from (https://docs.fivem.net/docs/game-references/blips/)
-            displayText = 'Weed Zone',
+            displayText = 'Grow Zone Cocaine',
         },
-        exclusive = {'weed_lemonhaze_seed'} -- Types of drugs that will be affected in this are.
+        exclusive = {'coca_seed'} -- Types of drugs that will be affected in this are.
     },
 }
 
@@ -124,7 +122,7 @@ Config.Zones = {
 
 Config.PlantDistance = 1.5 -- minimum Distance between two plants
 
-Config.OnlyAllowedGrounds = false -- Allow drug growth only on allowed grounds
+Config.OnlyAllowedGrounds = true -- Allow drug growth only on allowed grounds
 Config.AllowedGrounds = {   -- Allowed ground types for planting
     1109728704, -- fields
     -1942898710, -- grass/dirt
@@ -185,31 +183,82 @@ Config.PlantTypes = {
         [2] = {"bkr_prop_weed_bud_02b", 0},
         [3] = {"bkr_prop_weed_bud_02a", 0},
     },
+    ["coca_plant"] = {
+        [1] = {"bzzz_plant_coca_a", 0},
+        [2] = {"bzzz_plant_coca_b", 0},
+        [3] = {"bzzz_plant_coca_c", 0},
+    },
 }
 
 Config.Plants = { -- Create seeds for drugs
 
-    ['weed_lemonhaze_seed'] = {
+    ['weed_ak47_seed'] = {
         growthTime = false, -- Cutsom growth time in minutes false if you want to use the global growth time
-        label = 'Lemon Haze', --
-        plantType = 'plant1', -- Choose plant types from (plant1, plant2, small_plant)
+        label = 'AK47', --
+        plantType = 'small_plant', -- Choose plant types from (plant1, plant2, small_plant)
         products = { -- Item the plant is going to produce when harvested with the max amount
-            ['weed_lemonhaze'] = {min = 1, max = 4},  
+            ['weed_ak47'] = {min = 12, max = 32},  
             --['other_item'] = {min = 1, max = 2}
         },
         seed = {
             chance = 50, -- Percent of getting back the seed
             min = 1, -- Min amount of seeds
+            max = 5 -- Max amount of seeds
+        },
+        time = 3000 -- Time it takes to plant/harvest in miliseconds
+    },
+    ['weed_ogkush_seed'] = {
+        growthTime = 40, -- Cutsom growth time in minutes false if you want to use the global growth time
+        label = 'OG Kush', --
+        plantType = 'plant1', -- Choose plant types from (plant1, plant2, small_plant)
+        products = { -- Item the plant is going to produce when harvested with the max amount
+            ['weed_ogkush'] = {min = 10, max = 30},  
+            --['other_item'] = {min = 1, max = 2}
+        },
+        seed = {
+            chance = 40, -- Percent of getting back the seed
+            min = 1, -- Min amount of seeds
+            max = 4 -- Max amount of seeds
+        },
+        time = 3000 -- Time it takes to plant/harvest in miliseconds
+    },
+    ['weed_purplehaze_seed'] = {
+        growthTime = 50, -- Cutsom growth time in minutes false if you want to use the global growth time
+        label = 'Purple Haze', --
+        plantType = 'plant2', -- Choose plant types from (plant1, plant2, small_plant)
+        products = { -- Item the plant is going to produce when harvested with the max amount
+            ['weed_purplehaze'] = {min = 8, max = 28},  
+            --['other_item'] = {min = 1, max = 2}
+        },
+        seed = {
+            chance = 30, -- Percent of getting back the seed
+            min = 1, -- Min amount of seeds
+            max = 3 -- Max amount of seeds
+        },
+        time = 3000 -- Time it takes to plant/harvest in miliseconds
+    },
+    ['weed_skunk_seed'] = {
+        growthTime = 60, -- Cutsom growth time in minutes false if you want to use the global growth time
+        label = 'Skunk', --
+        plantType = 'plant2', -- Choose plant types from (plant1, plant2, small_plant)
+        products = { -- Item the plant is going to produce when harvested with the max amount
+            ['weed_skunk'] = {min = 6, max = 20},  
+            --['other_item'] = {min = 1, max = 2}
+        },
+        seed = {
+            chance = 20, -- Percent of getting back the seed
+            min = 1, -- Min amount of seeds
             max = 2 -- Max amount of seeds
         },
         time = 3000 -- Time it takes to plant/harvest in miliseconds
     },
+
     ['coca_seed'] = {
-        growthTime = 45, -- Cutsom growth time in minutes false if you want to use the global growth time
+        growthTime = 50, -- Cutsom growth time in minutes false if you want to use the global growth time
         label = 'Coca Plant', --
-        plantType = 'small_plant', -- Choose plant types from (plant1, plant2, small_plant) also you can change plants yourself in main/client.lua line: 2
+        plantType = 'coca_plant', -- Choose plant types from (plant1, plant2, small_plant) also you can change plants yourself in main/client.lua line: 2
         products = { -- Item the plant is going to produce when harvested with the max amount
-            ['coca']= {min = 1, max = 2}
+            ['coca']= {min = 5, max = 15}
         },
         seed = {
             chance = 50, -- Percent of getting back the seed
@@ -250,21 +299,153 @@ Config.ProcessingTables = { -- Create processing table
         type = 'weed',
         model = 'bkr_prop_weed_table_01a', -- Exanples: bkr_prop_weed_table_01a, bkr_prop_meth_table01a, bkr_prop_coke_table01a
         recipes = {
-            ['joint'] = {
-                label = 'Joint',
+            ['joint_ak'] = {
+                label = 'Joint AK47',
                 ingrediants = {
-                    ['weed_lemonhaze'] = 3,
+                    ['weed_ak47'] = 1,
                     ['paper'] = 1
                 },
                 outputs = {
-                    ['joint'] = 2
+                    ['joint_ak'] = 1
                 },
-                processTime = 5,
-                failChance = 15,
-                animation = {
-                    dict = 'anim@gangops@facility@servers@bodysearch@',
-                    anim = 'player_search',
-                }
+                processTime = 7,
+                failChance = 5
+            },
+            ['joint_ogk'] = {
+                label = 'Joint OGKush',
+                ingrediants = {
+                    ['weed_ogkush'] = 1,
+                    ['paper'] = 1
+                },
+                outputs = {
+                    ['joint_ogk'] = 1
+                },
+                processTime = 7,
+                failChance = 5
+            },
+            ['joint_ph'] = {
+                label = 'Joint PurpleHaze',
+                ingrediants = {
+                    ['weed_purplehaze'] = 1,
+                    ['paper'] = 1
+                },
+                outputs = {
+                    ['joint_ph'] = 1
+                },
+                processTime = 7,
+                failChance = 5
+            },
+            ['joint_sk'] = {
+                label = 'Joint Skunk',
+                ingrediants = {
+                    ['weed_skunk'] = 1,
+                    ['paper'] = 1
+                },
+                outputs = {
+                    ['joint_sk'] = 1
+                },
+                processTime = 7,
+                failChance = 5
+            },
+
+
+            ['baggie_ak'] = {
+                label = 'Baggie AK47',
+                ingrediants = {
+                    ['weed_ak47'] = 1,
+                    ['baggie'] = 1
+                },
+                outputs = {
+                    ['baggie_ak'] = 1
+                },
+                processTime = 15,
+                failChance = 10
+            },
+            ['baggie_ogk'] = {
+                label = 'Baggie OGKush',
+                ingrediants = {
+                    ['weed_ogkush'] = 1,
+                    ['baggie'] = 1
+                },
+                outputs = {
+                    ['baggie_ogk'] = 1
+                },
+                processTime = 15,
+                failChance = 10
+            },
+            ['baggie_ph'] = {
+                label = 'Baggie Purple Haze',
+                ingrediants = {
+                    ['weed_purplehaze'] = 1,
+                    ['baggie'] = 1
+                },
+                outputs = {
+                    ['baggie_ph'] = 1
+                },
+                processTime = 15,
+                failChance = 10
+            },
+            ['baggie_sk'] = {
+                label = 'Baggie Skunk',
+                ingrediants = {
+                    ['weed_skunk'] = 1,
+                    ['baggie'] = 1
+                },
+                outputs = {
+                    ['baggie_sk'] = 1
+                },
+                processTime = 15,
+                failChance = 10
+            },
+
+
+            ['ozjar_ak'] = {
+                label = 'Oz Jar AK47',
+                ingrediants = {
+                    ['weed_ak47'] = 28,
+                    ['empty_jar'] = 1
+                },
+                outputs = {
+                    ['ozjar_ak'] = 1
+                },
+                processTime = 25,
+                failChance = 15
+            },
+            ['ozjar_ogk'] = {
+                label = 'Oz Jar OGKush',
+                ingrediants = {
+                    ['weed_ogkush'] = 28,
+                    ['empty_jar'] = 1
+                },
+                outputs = {
+                    ['ozjar_ogk'] = 1
+                },
+                processTime = 25,
+                failChance = 15
+            },
+            ['ozjar_ph'] = {
+                label = 'Oz Jar Purple Haze',
+                ingrediants = {
+                    ['weed_purplehaze'] = 28,
+                    ['empty_jar'] = 1
+                },
+                outputs = {
+                    ['ozjar_ph'] = 1
+                },
+                processTime = 25,
+                failChance = 15
+            },
+            ['ozjar_sk'] = {
+                label = 'Oz Jar Skunk',
+                ingrediants = {
+                    ['weed_skunk'] = 28,
+                    ['empty_jar'] = 1
+                },
+                outputs = {
+                    ['ozjar_sk'] = 1
+                },
+                processTime = 25,
+                failChance = 15
             },
             -- Add more recipes here like this
             --[[ ['weedbag'] = {
@@ -295,7 +476,31 @@ Config.ProcessingTables = { -- Create processing table
                 outputs = {
                     ['cocaine'] = 2
                 },
+                processTime = 15,
+                failChance = 15
+            },
+            ['baggie_coke'] = {
+                label = 'Baggie Cocaine',
+                ingrediants = {
+                    ['cocaine'] = 2,
+                    ['baggie'] = 1
+                },
+                outputs = {
+                    ['baggie_coke'] = 1
+                },
                 processTime = 10,
+                failChance = 10
+            },
+            ['brick_coke'] = {
+                label = 'Oz Brick of Cocaine',
+                ingrediants = {
+                    ['cocaine'] = 28,
+                    ['baggie_1oz'] = 1
+                },
+                outputs = {
+                    ['brick_coke'] = 1
+                },
+                processTime = 25,
                 failChance = 15
             },
         }
@@ -335,18 +540,58 @@ Config.ProcessingTables = { -- Create processing table
 Config.EnableDrugs = true -- Enable drug effects
 Config.Drugs = { -- Create you own drugs
 
-    ['joint'] = {
-        label = 'Joint',
+    ['joint_ak'] = {
+        label = 'Joint AK47',
         animation = 'smoke', -- Animations: blunt, sniff, pill
         time = 80, -- Time in seconds of the Effects
         effects = { -- Effects: runningSpeedIncrease, infinateStamina, moreStrength, healthRegen, foodRegen, drunkWalk, psycoWalk, outOfBody, cameraShake, fogEffect, confusionEffect, whiteoutEffect, intenseEffect, focusEffect
+            'fogEffect',
+            'confusionEffect',
+            'healthRegen',
+            ''
+        }
+    },
+
+    ['joint_ogk'] = {
+        label = 'Joint OGKush',
+        animation = 'smoke', -- Animations: blunt, sniff, pill
+        time = 100, -- Time in seconds of the Effects
+        effects = { -- Effects: runningSpeedIncrease, infinateStamina, moreStrength, healthRegen, foodRegen, drunkWalk, psycoWalk, outOfBody, cameraShake, fogEffect, confusionEffect, whiteoutEffect, intenseEffect, focusEffect
+            'fogEffect',
+            'confusionEffect',
+            'healthRegen',
+            'whiteoutEffect'
+        }
+    },
+
+    ['joint_ph'] = {
+        label = 'Joint Purple Haze',
+        animation = 'smoke', -- Animations: blunt, sniff, pill
+        time = 125, -- Time in seconds of the Effects
+        effects = { -- Effects: runningSpeedIncrease, infinateStamina, moreStrength, healthRegen, foodRegen, drunkWalk, psycoWalk, outOfBody, cameraShake, fogEffect, confusionEffect, whiteoutEffect, intenseEffect, focusEffect
             'intenseEffect',
+            'fogEffect',
             'healthRegen',
             'moreStrength',
             'drunkWalk'
-        },
-        cooldown = 360, -- Cooldown in seconds until you can use this drug again
+        }
     },
+
+    ['joint_sk'] = {
+        label = 'Joint Skunk',
+        animation = 'smoke', -- Animations: blunt, sniff, pill
+        time = 150, -- Time in seconds of the Effects
+        effects = { -- Effects: runningSpeedIncrease, infinateStamina, moreStrength, healthRegen, foodRegen, drunkWalk, psycoWalk, outOfBody, cameraShake, fogEffect, confusionEffect, whiteoutEffect, intenseEffect, focusEffect
+            'intenseEffect',
+            'whiteoutEffect',
+            'fogEffect',
+            'confusionEffect',
+            'healthRegen',
+            'moreStrength',
+            'drunkWalk'
+        }
+    },
+
     ['cocaine'] = {
         label = 'Cocaine',
         animation = 'sniff', -- Animations: blunt, sniff, pill
@@ -356,8 +601,7 @@ Config.Drugs = { -- Create you own drugs
             'infinateStamina',
             'fogEffect',
             'psycoWalk'
-        },
-        cooldown = 480, -- Cooldown in seconds until you can use this drug again
+        }
     },
 }
 
@@ -409,9 +653,15 @@ Config.SellZones = {
         },
         thickness = 27,
         drugs = {
-            { item = 'cocaine', price = math.random(100, 200)},
-            { item = 'joint', price = math.random(50, 100)},
-            { item = 'weed_lemonhaze', price = math.random(50, 100)}
+            { item = 'baggie_coke', price = math.random(75, 150)},
+            { item = 'joint_ak', price = math.random(15, 25)},
+            { item = 'joint_ogk', price = math.random(18, 25)},
+            { item = 'joint_ph', price = math.random(21, 30)},
+            { item = 'joint_sk', price = math.random(25, 30)},
+            { item = 'baggie_ak', price = math.random(18, 30)},
+            { item = 'baggie_ogk', price = math.random(21, 30)},
+            { item = 'baggie_ph', price = math.random(24, 35)},
+            { item = 'baggie_sk', price = math.random(27, 35)}
         }
     },
     ['vinewood'] = {
@@ -430,9 +680,15 @@ Config.SellZones = {
         },
         thickness = 59.0,
         drugs = {
-            { item = 'cocaine', price = math.random(100, 200)},
-            { item = 'joint', price = math.random(50, 100)},
-            { item = 'weed_lemonhaze', price = math.random(50, 100)}
+            { item = 'baggie_coke', price = math.random(75, 150)},
+            { item = 'joint_ak', price = math.random(15, 25)},
+            { item = 'joint_ogk', price = math.random(18, 25)},
+            { item = 'joint_ph', price = math.random(21, 30)},
+            { item = 'joint_sk', price = math.random(25, 30)},
+            { item = 'baggie_ak', price = math.random(18, 30)},
+            { item = 'baggie_ogk', price = math.random(21, 30)},
+            { item = 'baggie_ph', price = math.random(24, 35)},
+            { item = 'baggie_sk', price = math.random(27, 35)}
         }
     },
     ['beach'] = {
@@ -449,9 +705,15 @@ Config.SellZones = {
         },
         thickness = 4.0,
         drugs = {
-            { item = 'cocaine', price = math.random(100, 200)},
-            { item = 'joint', price = math.random(50, 100)},
-            { item = 'weed_lemonhaze', price = math.random(50, 100)}
+            { item = 'baggie_coke', price = math.random(75, 150)},
+            { item = 'joint_ak', price = math.random(15, 25)},
+            { item = 'joint_ogk', price = math.random(18, 25)},
+            { item = 'joint_ph', price = math.random(21, 30)},
+            { item = 'joint_sk', price = math.random(25, 30)},
+            { item = 'baggie_ak', price = math.random(18, 30)},
+            { item = 'baggie_ogk', price = math.random(21, 30)},
+            { item = 'baggie_ph', price = math.random(24, 35)},
+            { item = 'baggie_sk', price = math.random(27, 35)}
         }
     },
 }
