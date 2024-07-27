@@ -35,8 +35,8 @@ Config.Webhook = {
 Config.EnableDealers = true -- Enable drug dealer system
 
 Config.DrugDealers = {
-   --[[ ['seed_dealer'] = { -- Dealer id (Musst be unique)
-        label = 'Seed Dealer', -- Dealer name
+	['seed_dealer'] = { -- Dealer id (Musst be unique)
+        label = 'Drug Supplier', -- Dealer name
         locations = { -- Dealer will spawn at one of these locations
             vector4(-462.8489, 1101.5592, 326.6819, 166.9773),
             vector4(-49.4244, 1903.6714, 194.3613, 95.7213),
@@ -44,16 +44,29 @@ Config.DrugDealers = {
         },
         ped = 's_m_y_dealer_01', -- Ped model
         blip = {
-            display = false, -- Display blip on map
-            sprite = 140, -- Select blip from (https://docs.fivem.net/docs/game-references/blips/)
+            display = true, -- Display blip on map
+            sprite = 514, -- Select blip from (https://docs.fivem.net/docs/game-references/blips/)
             displayColor = 2, -- Select blip color from (https://docs.fivem.net/docs/game-references/blips/)
-            displayText = 'Seed Dealer',
+            displayText = 'Drug Supplier',
         },
         items = { -- Items the dealer is selling
-            ['weed_lemonhaze_seed'] = {min = 100, max = 200}, -- min/max price
-            ['coca_seed'] = {min = 100, max = 300},
+            ['paper'] = {min = 1, max = 2}, -- min/max price
+            ['baggie'] = {min = 2, max = 4},
+            ['empty_jar'] = {min = 3, max = 5},
+            ['baggie_1oz'] = {min = 3, max = 6},
+            ['watering_can'] = {min = 7, max = 10}, -- min/max price
+            ['fertilizer'] = {min = 10, max = 15},
+            ['liquid_fertilizer'] = {min = 15, max = 20},
+            ['advanced_fertilizer'] = {min = 20, max = 25},
+            ['weed_ak47_seed'] = {min = 250, max = 300},
+            ['weed_ogkush_seed'] = {min = 350, max = 400},
+            ['weed_purplehaze_seed'] = {min = 450, max = 500},
+            ['weed_skunk_seed'] = {min = 550, max = 600},
+            ['coca_seed'] = {min = 750, max = 900},
+            ['weed_processing_table'] = {min = 50000, max = 60000},
+            ['cocaine_processing_table'] = {min = 75000, max = 90000},
         }
-    }, ]]--
+    },
 }
 
 --- Growing Related Settings
@@ -254,7 +267,7 @@ Config.Plants = { -- Create seeds for drugs
     },
 
     ['coca_seed'] = {
-        growthTime = 50, -- Cutsom growth time in minutes false if you want to use the global growth time
+        growthTime = 80, -- Cutsom growth time in minutes false if you want to use the global growth time
         label = 'Coca Plant', --
         plantType = 'coca_plant', -- Choose plant types from (plant1, plant2, small_plant) also you can change plants yourself in main/client.lua line: 2
         products = { -- Item the plant is going to produce when harvested with the max amount
@@ -476,7 +489,7 @@ Config.ProcessingTables = { -- Create processing table
                 outputs = {
                     ['cocaine'] = 2
                 },
-                processTime = 15,
+                processTime = 7,
                 failChance = 15
             },
             ['baggie_coke'] = {
@@ -500,7 +513,7 @@ Config.ProcessingTables = { -- Create processing table
                 outputs = {
                     ['brick_coke'] = 1
                 },
-                processTime = 25,
+                processTime = 15,
                 failChance = 15
             },
         }
@@ -633,7 +646,7 @@ Config.PoliceJobs = {
 Config.SellSettings = {
     ['onlyAvailableItems'] = true, -- Only offers with drugs the player has in his inventory
     ['sellChance'] = 70, -- Chance to sell drug (in %)
-    ['stealChance'] = 20, -- Chance that the ped dont give you money (in %)
+    ['stealChance'] = 15, -- Chance that the ped dont give you money (in %)
     ['sellAmount'] = { -- Amount of drugs you can sell
         min = 1,
         max = 6,
@@ -654,14 +667,14 @@ Config.SellZones = {
         thickness = 27,
         drugs = {
             { item = 'baggie_coke', price = math.random(75, 150)},
-            { item = 'joint_ak', price = math.random(15, 25)},
-            { item = 'joint_ogk', price = math.random(18, 25)},
-            { item = 'joint_ph', price = math.random(21, 30)},
-            { item = 'joint_sk', price = math.random(25, 30)},
-            { item = 'baggie_ak', price = math.random(18, 30)},
-            { item = 'baggie_ogk', price = math.random(21, 30)},
-            { item = 'baggie_ph', price = math.random(24, 35)},
-            { item = 'baggie_sk', price = math.random(27, 35)}
+            { item = 'joint_ak', price = math.random(15, 20)},
+            { item = 'joint_ogk', price = math.random(20, 25)},
+            { item = 'joint_ph', price = math.random(30, 35)},
+            { item = 'joint_sk', price = math.random(35, 40)},
+            { item = 'baggie_ak', price = math.random(20, 25)},
+            { item = 'baggie_ogk', price = math.random(25, 30)},
+            { item = 'baggie_ph', price = math.random(35, 45)},
+            { item = 'baggie_sk', price = math.random(45, 60)}
         }
     },
     ['vinewood'] = {
@@ -681,14 +694,14 @@ Config.SellZones = {
         thickness = 59.0,
         drugs = {
             { item = 'baggie_coke', price = math.random(75, 150)},
-            { item = 'joint_ak', price = math.random(15, 25)},
-            { item = 'joint_ogk', price = math.random(18, 25)},
-            { item = 'joint_ph', price = math.random(21, 30)},
-            { item = 'joint_sk', price = math.random(25, 30)},
-            { item = 'baggie_ak', price = math.random(18, 30)},
-            { item = 'baggie_ogk', price = math.random(21, 30)},
-            { item = 'baggie_ph', price = math.random(24, 35)},
-            { item = 'baggie_sk', price = math.random(27, 35)}
+            { item = 'joint_ak', price = math.random(15, 20)},
+            { item = 'joint_ogk', price = math.random(20, 25)},
+            { item = 'joint_ph', price = math.random(30, 35)},
+            { item = 'joint_sk', price = math.random(35, 40)},
+            { item = 'baggie_ak', price = math.random(20, 25)},
+            { item = 'baggie_ogk', price = math.random(25, 30)},
+            { item = 'baggie_ph', price = math.random(35, 45)},
+            { item = 'baggie_sk', price = math.random(45, 60)}
         }
     },
     ['beach'] = {
@@ -706,14 +719,14 @@ Config.SellZones = {
         thickness = 4.0,
         drugs = {
             { item = 'baggie_coke', price = math.random(75, 150)},
-            { item = 'joint_ak', price = math.random(15, 25)},
-            { item = 'joint_ogk', price = math.random(18, 25)},
-            { item = 'joint_ph', price = math.random(21, 30)},
-            { item = 'joint_sk', price = math.random(25, 30)},
-            { item = 'baggie_ak', price = math.random(18, 30)},
-            { item = 'baggie_ogk', price = math.random(21, 30)},
-            { item = 'baggie_ph', price = math.random(24, 35)},
-            { item = 'baggie_sk', price = math.random(27, 35)}
+            { item = 'joint_ak', price = math.random(15, 20)},
+            { item = 'joint_ogk', price = math.random(20, 25)},
+            { item = 'joint_ph', price = math.random(30, 35)},
+            { item = 'joint_sk', price = math.random(35, 40)},
+            { item = 'baggie_ak', price = math.random(20, 25)},
+            { item = 'baggie_ogk', price = math.random(25, 30)},
+            { item = 'baggie_ph', price = math.random(35, 45)},
+            { item = 'baggie_sk', price = math.random(45, 60)}
         }
     },
 }
@@ -732,7 +745,7 @@ Config.BlacklistPeds = {
 
 function SendPoliceAlert(coords)
     -- Add You own police alert system here
-    local message = 'Drug Dealer spotted at '..coords
+    local message = 'Drug Deal spotted at '..coords
     TriggerEvent('chat:addMessage', {
         args = {message}
     })
