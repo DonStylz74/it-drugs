@@ -1,7 +1,7 @@
 Locales['en'] = {
 
     ['MENU__DEALER'] = 'Dealer: %s',
-    ['MENU__DEALER__DESC'] = 'Buy this for $%g a pice',
+    ['MENU__DEALER__DESC'] = 'Buy this for $%g each',
 
     ['MENU__PLANT'] = '%s',
     ['MENU__DEAD__PLANT'] = 'Dead Plant',
