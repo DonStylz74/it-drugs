@@ -100,7 +100,7 @@ Config.Zones = {
         blip = {
             display = true, -- Display blip on map
             sprite = 466, -- Select blip from (https://docs.fivem.net/docs/game-references/blips/)
-            displayColor = 0, -- Select blip color from (https://docs.fivem.net/docs/game-references/blips/)
+            displayColor = 2, -- Select blip color from (https://docs.fivem.net/docs/game-references/blips/)
             displayText = 'Grow Zone Weed',
         },
         exclusive = {'weed_ak47_seed', 'weed_ogkush_seed', 'weed_purplehaze_seed' ,'weed_skunk_seed'} -- Types of drugs that will be affected in this are.
@@ -117,7 +117,7 @@ Config.Zones = {
         blip = {
             display = true, -- Display blip on map
             sprite = 466, -- Select blip from (https://docs.fivem.net/docs/game-references/blips/)
-            displayColor = 2, -- Select blip color from (https://docs.fivem.net/docs/game-references/blips/)
+            displayColor = 0, -- Select blip color from (https://docs.fivem.net/docs/game-references/blips/)
             displayText = 'Grow Zone Cocaine',
         },
         exclusive = {'coca_seed'} -- Types of drugs that will be affected in this are.
