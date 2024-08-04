@@ -89,12 +89,12 @@ Config.GlobalGrowTime = 30 -- Time in minutes for a plant to grow
 Config.Zones = {
     ['weed_zone_one'] = { -- Zone id (Musst be unique)
         points = {
-            vec3(5193.7534, -5194.3188, 43.0), -- Zone coords  Weed --  Cayo Perico island
-            vec3(5223.5186, -5184.6665, 43.0),
-            vec3(5222.6567, -5144.0562, 43.0),
-            vec3(5195.5068, -5163.0142, 43.0),
+		vec3(5388.0, -5327.0, 35.0),  -- Zone coords  Weed --  Cayo Perico island
+		vec3(5355.5, -5366.0, 35.0),
+		vec3(5316.5, -5324.5, 35.0),
+		vec3(5345.0, -5295.0, 35.0),
         },
-        thickness = 8.0,
+        thickness = 16.5,
         growMultiplier = 2, -- GlobalGrowTime / growMultiplier = Time in minutes for a plant to grow in this zone
         
         blip = {
@@ -107,12 +107,12 @@ Config.Zones = {
     },
     ['weed_zone_two'] = { -- Zone id (Musst be unique)
         points = {
-            vec3(5321.0454, -5238.9775, 41.0), -- Zone coords Cocaine --  Cayo Perico island
-            vec3(5339.3867, -5219.6318, 41.0),
-            vec3(5304.3071, -5184.5586, 41.0),
-            vec3(5285.4985, -5207.1982, 41.0),
+		vec3(5343.0, -5220.0, 27.6),  -- Zone coords Cocaine --  Cayo Perico island
+		vec3(5324.0, -5240.0, 27.6),
+		vec3(5284.4501953125, -5206.25, 27.6),
+		vec3(5303.0, -5185.0, 27.6),
         },
-        thickness = 4.0,
+        thickness = 17.00,
         growMultiplier = 2, -- GlobalGrowTime / growMultiplier = Time in minutes for a plant to grow in this zone
         blip = {
             display = true, -- Display blip on map
@@ -181,20 +181,25 @@ Config.Items = {
 
 Config.PlantTypes = {
     -- small is growth 0-30%, medium is 30-80%, large is 80-100%
-    ["plant1"] = {
+    ["ak45_plant"] = {
+        [1] = {"bzzz_prop_seeds_003", 0},
+        [2] = {"prop_weed_02", -0.5},
+        [3] = {"bkr_prop_weed_med_01b", -0.5},
+    },
+    ["ogk_plant"] = {
+        [1] = {"bzzz_prop_seeds_003", 0},
+        [2] = {"prop_weed_02", 0},
+        [3] = {"prop_weed_01", 0},
+    },
+    ["ph_plant"] = {
         [1] = {"bkr_prop_weed_01_small_01a", -0.5},
         [2] = {"bkr_prop_weed_med_01a", -0.5},
         [3] = {"bkr_prop_weed_lrg_01a", -0.5},
     },
-    ["plant2"] = {
+    ["sk_plant"] = {
         [1] = {"bkr_prop_weed_01_small_01b", -0.5},
         [2] = {"bkr_prop_weed_med_01b",-0.5},
         [3] = {"bkr_prop_weed_lrg_01b", -0.5},
-    },
-    ["small_plant"] = {
-        [1] = {"bkr_prop_weed_bud_pruned_01a", 0},
-        [2] = {"bkr_prop_weed_bud_02b", 0},
-        [3] = {"bkr_prop_weed_bud_02a", 0},
     },
     ["coca_plant"] = {
         [1] = {"bzzz_plant_coca_a", 0},
@@ -208,9 +213,9 @@ Config.Plants = { -- Create seeds for drugs
     ['weed_ak47_seed'] = {
         growthTime = false, -- Cutsom growth time in minutes false if you want to use the global growth time
         label = 'AK47', --
-        plantType = 'small_plant', -- Choose plant types from (plant1, plant2, small_plant)
+        plantType = 'ak45_plant', -- Choose plant types from (plant1, plant2, small_plant)
         products = { -- Item the plant is going to produce when harvested with the max amount
-            ['weed_ak47'] = {min = 12, max = 32},  
+            ['weed_ak47'] = {min = 15, max = 45},  
             --['other_item'] = {min = 1, max = 2}
         },
         seed = {
@@ -223,13 +228,13 @@ Config.Plants = { -- Create seeds for drugs
     ['weed_ogkush_seed'] = {
         growthTime = 40, -- Cutsom growth time in minutes false if you want to use the global growth time
         label = 'OG Kush', --
-        plantType = 'plant1', -- Choose plant types from (plant1, plant2, small_plant)
+        plantType = 'ogk_plant', -- Choose plant types from (plant1, plant2, small_plant)
         products = { -- Item the plant is going to produce when harvested with the max amount
-            ['weed_ogkush'] = {min = 10, max = 30},  
+            ['weed_ogkush'] = {min = 13, max = 39},  
             --['other_item'] = {min = 1, max = 2}
         },
         seed = {
-            chance = 40, -- Percent of getting back the seed
+            chance = 30, -- Percent of getting back the seed
             min = 1, -- Min amount of seeds
             max = 4 -- Max amount of seeds
         },
@@ -238,13 +243,13 @@ Config.Plants = { -- Create seeds for drugs
     ['weed_purplehaze_seed'] = {
         growthTime = 50, -- Cutsom growth time in minutes false if you want to use the global growth time
         label = 'Purple Haze', --
-        plantType = 'plant2', -- Choose plant types from (plant1, plant2, small_plant)
+        plantType = 'ph_plant', -- Choose plant types from (plant1, plant2, small_plant)
         products = { -- Item the plant is going to produce when harvested with the max amount
-            ['weed_purplehaze'] = {min = 8, max = 28},  
+            ['weed_purplehaze'] = {min = 11, max = 33},  
             --['other_item'] = {min = 1, max = 2}
         },
         seed = {
-            chance = 30, -- Percent of getting back the seed
+            chance = 20, -- Percent of getting back the seed
             min = 1, -- Min amount of seeds
             max = 3 -- Max amount of seeds
         },
@@ -253,13 +258,13 @@ Config.Plants = { -- Create seeds for drugs
     ['weed_skunk_seed'] = {
         growthTime = 60, -- Cutsom growth time in minutes false if you want to use the global growth time
         label = 'Skunk', --
-        plantType = 'plant2', -- Choose plant types from (plant1, plant2, small_plant)
+        plantType = 'sk_plant', -- Choose plant types from (plant1, plant2, small_plant)
         products = { -- Item the plant is going to produce when harvested with the max amount
-            ['weed_skunk'] = {min = 6, max = 20},  
+            ['weed_skunk'] = {min = 9, max = 27},  
             --['other_item'] = {min = 1, max = 2}
         },
         seed = {
-            chance = 20, -- Percent of getting back the seed
+            chance = 15, -- Percent of getting back the seed
             min = 1, -- Min amount of seeds
             max = 2 -- Max amount of seeds
         },
@@ -271,12 +276,12 @@ Config.Plants = { -- Create seeds for drugs
         label = 'Coca Plant', --
         plantType = 'coca_plant', -- Choose plant types from (plant1, plant2, small_plant) also you can change plants yourself in main/client.lua line: 2
         products = { -- Item the plant is going to produce when harvested with the max amount
-            ['coca']= {min = 5, max = 15}
+            ['coca']= {min = 5, max = 18}
         },
         seed = {
-            chance = 50, -- Percent of getting back the seed
+            chance = 30, -- Percent of getting back the seed
             min = 1, -- Min amount of seeds
-            max = 2 -- Max amount of seeds
+            max = 3 -- Max amount of seeds
         },
         time = 3000 -- Time it takes to harvest in miliseconds
     },
