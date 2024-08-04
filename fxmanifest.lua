@@ -8,6 +8,7 @@ version 'v1.2.4'
 shared_script 'bridge/init.lua'
 
 data_file 'DLC_ITYP_REQUEST' 'stream/bzzz_plant_coca_a.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/bzzz_prop_seeds_000.ytyp'
 
 shared_scripts {
     'shared/config.lua',
