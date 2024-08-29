@@ -38,7 +38,7 @@ Config.DrugDealers = {
 	['seed_dealer'] = { -- Dealer id (Musst be unique)
         label = 'Drug Supplier', -- Dealer name
         locations = { -- Dealer will spawn at one of these locations
-            vector4(-462.8489, 1101.5592, 326.6819, 166.9773),
+            vector4(-36.6369, -1492.3983, 31.2171, 85.0993), --behind store across franklins aunts
             vector4(-49.4244, 1903.6714, 194.3613, 95.7213),
             vector4(2414.2463, 5003.8462, 45.6655, 40.8932),
         },
@@ -122,6 +122,24 @@ Config.Zones = {
         },
         exclusive = {'coca_seed'} -- Types of drugs that will be affected in this are.
     },
+    ['weed_zone_three'] = { -- Zone id (Musst be unique)
+        points = {
+		vec3(-814.0, -61.0, 38.0),  -- Zone coords Weed --  Test Grow Zone
+		vec3(-819.0, -42.0, 38.0),
+		vec3(-885.0, -72.0, 38.0),
+		vec3(-878.0, -86.0, 38.0),
+		vec3(-865.0, -87.0, 38.0),
+        },
+        thickness = 4.0,
+        growMultiplier = 2, -- GlobalGrowTime / growMultiplier = Time in minutes for a plant to grow in this zone
+        blip = {
+            display = true, -- Display blip on map
+            sprite = 466, -- Select blip from (https://docs.fivem.net/docs/game-references/blips/)
+            displayColor = 2, -- Select blip color from (https://docs.fivem.net/docs/game-references/blips/)
+            displayText = 'Test Grow Zone',
+        },
+        exclusive = {'weed_ak47_seed', 'weed_ogkush_seed', 'weed_purplehaze_seed' ,'weed_skunk_seed', 'coca_seed'} -- Types of drugs that will be affected in this are.
+    },
 }
 
 
@@ -158,23 +176,23 @@ Config.HealthBaseDecay = {7, 10} -- Min/Max Amount of health decay when the plan
 
 Config.Items = {
     ['watering_can'] = {
-        water = 25,
+        water = 40,
         fertilizer = 0,
         itemBack = nil, -- Example itemBack = 'watering_can' if you want to get the watering can back after used
     },
     ['liquid_fertilizer'] = {
-        water = 15,
-        fertilizer = 15,
+        water = 20,
+        fertilizer = 20,
         itemBack = nil,
     },
     ['fertilizer'] = {
         water = 0,
-        fertilizer = 25,
+        fertilizer = 40,
         itemBack = nil,
     },
     ['advanced_fertilizer'] = {
         water = 0,
-        fertilizer = 40,
+        fertilizer = 80,
         itemBack = nil,
     },
 }
@@ -183,28 +201,38 @@ Config.PlantTypes = {
     -- small is growth 0-30%, medium is 30-80%, large is 80-100%
     ["ak45_plant"] = {
         [1] = {"bzzz_prop_seeds_003", 0},
-        [2] = {"prop_weed_02", -0.5},
-        [3] = {"bkr_prop_weed_med_01b", -0.5},
+        [2] = {"bkr_prop_weed_01_small_01c", -0.465},
+        [3] = {"an_weed_yellow_01_small_01b", -0.47},
+        [4] = {"an_weed_yellow_med_01b", -0.47},
+        [5] = {"an_weed_yellow_lrg_01b", -0.47},
     },
     ["ogk_plant"] = {
         [1] = {"bzzz_prop_seeds_003", 0},
-        [2] = {"prop_weed_02", 0},
-        [3] = {"prop_weed_01", 0},
+        [2] = {"bkr_prop_weed_01_small_01c", -0.46},
+        [3] = {"an_weed_blue_01_small_01a", -0.47},
+        [4] = {"an_weed_blue_med_01b", -0.47},
+        [5] = {"an_weed_blue_lrg_01b", -0.47},
     },
     ["ph_plant"] = {
-        [1] = {"bkr_prop_weed_01_small_01a", -0.5},
-        [2] = {"bkr_prop_weed_med_01a", -0.5},
-        [3] = {"bkr_prop_weed_lrg_01a", -0.5},
+        [1] = {"bzzz_prop_seeds_003", 0},
+        [2] = {"bkr_prop_weed_01_small_01c", -0.46},
+        [3] = {"an_weed_purple_01_small_01b", -0.47},
+        [4] = {"an_weed_purple_med_01b", -0.47},
+        [5] = {"an_weed_purple_lrg_01b", -0.47},
     },
     ["sk_plant"] = {
-        [1] = {"bkr_prop_weed_01_small_01b", -0.5},
-        [2] = {"bkr_prop_weed_med_01b",-0.5},
-        [3] = {"bkr_prop_weed_lrg_01b", -0.5},
+        [1] = {"bzzz_prop_seeds_003", 0},
+        [2] = {"bkr_prop_weed_01_small_01c", -0.466},
+        [3] = {"an_weed_white_01_small_01b", -0.47},
+        [4] = {"an_weed_white_med_01b", -0.47},
+        [5] = {"an_weed_white_lrg_01b", -0.47},
     },
     ["coca_plant"] = {
-        [1] = {"bzzz_plant_coca_a", 0},
-        [2] = {"bzzz_plant_coca_b", 0},
-        [3] = {"bzzz_plant_coca_c", 0},
+        [1] = {"bzzz_prop_seeds_003", 0},
+        [2] = {"bzzz_plant_coca_a", -0.5},
+        [3] = {"bzzz_plant_coca_a", 0},
+        [4] = {"bzzz_plant_coca_b", 0},
+        [5] = {"bzzz_plant_coca_c", 0},
     },
 }
 
@@ -219,14 +247,14 @@ Config.Plants = { -- Create seeds for drugs
             --['other_item'] = {min = 1, max = 2}
         },
         seed = {
-            chance = 50, -- Percent of getting back the seed
+            chance = 40, -- Percent of getting back the seed
             min = 1, -- Min amount of seeds
             max = 5 -- Max amount of seeds
         },
-        time = 3000 -- Time it takes to plant/harvest in miliseconds
+        time = 5000 -- Time it takes to plant/harvest in miliseconds
     },
     ['weed_ogkush_seed'] = {
-        growthTime = 40, -- Cutsom growth time in minutes false if you want to use the global growth time
+        growthTime = 35, -- Cutsom growth time in minutes false if you want to use the global growth time
         label = 'OG Kush', --
         plantType = 'ogk_plant', -- Choose plant types from (plant1, plant2, small_plant)
         products = { -- Item the plant is going to produce when harvested with the max amount
@@ -238,10 +266,10 @@ Config.Plants = { -- Create seeds for drugs
             min = 1, -- Min amount of seeds
             max = 4 -- Max amount of seeds
         },
-        time = 3000 -- Time it takes to plant/harvest in miliseconds
+        time = 6000 -- Time it takes to plant/harvest in miliseconds
     },
     ['weed_purplehaze_seed'] = {
-        growthTime = 50, -- Cutsom growth time in minutes false if you want to use the global growth time
+        growthTime = 40, -- Cutsom growth time in minutes false if you want to use the global growth time
         label = 'Purple Haze', --
         plantType = 'ph_plant', -- Choose plant types from (plant1, plant2, small_plant)
         products = { -- Item the plant is going to produce when harvested with the max amount
@@ -253,10 +281,10 @@ Config.Plants = { -- Create seeds for drugs
             min = 1, -- Min amount of seeds
             max = 3 -- Max amount of seeds
         },
-        time = 3000 -- Time it takes to plant/harvest in miliseconds
+        time = 7000 -- Time it takes to plant/harvest in miliseconds
     },
     ['weed_skunk_seed'] = {
-        growthTime = 60, -- Cutsom growth time in minutes false if you want to use the global growth time
+        growthTime = 50, -- Cutsom growth time in minutes false if you want to use the global growth time
         label = 'Skunk', --
         plantType = 'sk_plant', -- Choose plant types from (plant1, plant2, small_plant)
         products = { -- Item the plant is going to produce when harvested with the max amount
@@ -268,22 +296,22 @@ Config.Plants = { -- Create seeds for drugs
             min = 1, -- Min amount of seeds
             max = 2 -- Max amount of seeds
         },
-        time = 3000 -- Time it takes to plant/harvest in miliseconds
+        time = 7000 -- Time it takes to plant/harvest in miliseconds
     },
 
     ['coca_seed'] = {
-        growthTime = 80, -- Cutsom growth time in minutes false if you want to use the global growth time
+        growthTime = 60, -- Cutsom growth time in minutes false if you want to use the global growth time
         label = 'Coca Plant', --
         plantType = 'coca_plant', -- Choose plant types from (plant1, plant2, small_plant) also you can change plants yourself in main/client.lua line: 2
         products = { -- Item the plant is going to produce when harvested with the max amount
             ['coca']= {min = 5, max = 18}
         },
         seed = {
-            chance = 30, -- Percent of getting back the seed
+            chance = 25, -- Percent of getting back the seed
             min = 1, -- Min amount of seeds
             max = 3 -- Max amount of seeds
         },
-        time = 3000 -- Time it takes to harvest in miliseconds
+        time = 8000 -- Time it takes to harvest in miliseconds
     },
 }
 
