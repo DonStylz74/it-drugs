@@ -46,8 +46,8 @@ end
 --- @param growth number - growth index [0-99]
 --- @return stage number - growth stage number [1-3]
 local calcStage = function(growth)
-    local stage = math.floor(growth / 33) + 1
-    if stage > 3 then stage = 3 end
+    local stage = math.floor(growth / 20) + 1
+    if stage > 5 then stage = 5 end
     return stage
 end
 
