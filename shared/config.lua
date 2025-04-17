@@ -360,7 +360,7 @@ Config.ProcessingTables = { -- Create processing table
                 label = 'Joint AK47',
                 ingrediants = {
                     ['weed_ak47'] = {amount = 1, remove = true},
-                    ['paper'] = {amount = 1, remove = true}
+                    ['rollpapers'] = {amount = 1, remove = true}
                 },
                 outputs = {
                     ['joint_ak'] = 1
@@ -385,7 +385,7 @@ Config.ProcessingTables = { -- Create processing table
                 label = 'Joint OGKush',
                 ingrediants = {
                     ['weed_ogkush'] = {amount = 1, remove = true},
-                    ['paper'] = {amount = 1, remove = true}
+                    ['rollpapers'] = {amount = 1, remove = true}
                 },
                 outputs = {
                     ['joint_ogk'] = 1
@@ -402,7 +402,7 @@ Config.ProcessingTables = { -- Create processing table
                 label = 'Joint PurpleHaze',
                 ingrediants = {
                     ['weed_purplehaze'] = {amount = 1, remove = true},
-                    ['paper'] = {amount = 1, remove = true}
+                    ['rollpapers'] = {amount = 1, remove = true}
                 },
                 outputs = {
                     ['joint_ph'] = 1
@@ -419,7 +419,7 @@ Config.ProcessingTables = { -- Create processing table
                 label = 'Joint Skunk',
                 ingrediants = {
                     ['weed_skunk'] = {amount = 1, remove = true},
-                    ['paper'] = {amount = 1, remove = true}
+                    ['rollpapers'] = {amount = 1, remove = true}
                 },
                 outputs = {
                     ['joint_sk'] = 1
