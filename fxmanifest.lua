@@ -34,6 +34,7 @@ client_scripts {
     'client/cl_target.lua',
     'client/cl_using.lua',
     'client/cl_blips.lua',
+    'client/cl_usableitems.lua',
 }
 
 server_scripts {
@@ -51,66 +52,98 @@ server_scripts {
 }
 
 files = {
+    --------------Tables-------------------
     'stream/freeze_it-drugs_table.ytyp',
-    'stream/freeze_it-scripts_coke_table.ydr',
+    'stream/tables/freeze_it-scripts_coke_table.ydr',
+    'stream/tables/freeze_it-scripts_empty_table.ydr',
+    'stream/tables/freeze_it-scripts_weed_table.ydr',
     'stream/freeze_it-scripts_meth_table.ytyp',
-    'stream/freeze_it-scripts_weed_table.ydr',
-    --------------Lemon Haze-------------------
-    'stream/an_weed_yellow.ytd',
-    'stream/an_weed_yellow_01_small_01b.ydr',
-    'stream/an_weed_yellow_lrg_01b.ydr',
-    'stream/an_weed_yellow_med_01b.ydr',
-    'stream/an_weed_yellow+hi.ytd',
+    ---------------empty pot----------------------
+    'stream/bzzz_growing_freepot_a.ytyp',
+    'stream/pot/bzzz_growing_freepot_b.ydr',
+    'stream/pot/bzzz_growing_freepot_textures.ytd',
+    ---------------Seedlings----------------------
+    'stream/bzzz_prop_seeds_000.ytyp',
+    'stream/seedling/bzzz_prop_seeds_003.ydr',
+    --------------Weed Types-------------------
     'stream/an_weed.ytyp',
+    --------------Lemon Haze-------------------
+    'stream/yellow/an_weed_yellow.ytd',
+    'stream/yellow/an_weed_yellow_01_small_01b.ydr',
+    'stream/yellow/an_weed_yellow_lrg_01b.ydr',
+    'stream/yellow/an_weed_yellow_med_01b.ydr',
+    'stream/yellow/an_weed_yellow+hi.ytd',
     ---------------Purple haze------------------
-    'stream/an_weed_purple.ytd',
-    'stream/an_weed_purple_01_small_01b.ydr',
-    'stream/an_weed_purple_lrg_01b.ydr',
-    'stream/an_weed_purple_med_01b.ydr',
-    'stream/an_weed_purple+hi.ytd',
+    'stream/purple/an_weed_purple.ytd',
+    'stream/purple/an_weed_purple_01_small_01b.ydr',
+    'stream/purple/an_weed_purple_lrg_01b.ydr',
+    'stream/purple/an_weed_purple_med_01b.ydr',
+    'stream/purple/an_weed_purple+hi.ytd',
     ---------------White Widow------------------
-    'stream/an_weed_white.ytd',
-    'stream/an_weed_white_01_small_01b.ydr',
-    'stream/an_weed_white_lrg_01b.ydr',
-    'stream/an_weed_white_med_01b.ydr',
-    'stream/an_weed_white+hi.ytd',
+    'stream/white/an_weed_white.ytd',
+    'stream/white/an_weed_white_01_small_01b.ydr',
+    'stream/white/an_weed_white_lrg_01b.ydr',
+    'stream/white/an_weed_white_med_01b.ydr',
+    'stream/white/an_weed_white+hi.ytd',
     ---------------blue berry------------------------
-    'stream/an_weed_blue.ytd',
-    'stream/an_weed_blue_01_small_01b.ydr',
-    'stream/an_weed_blue_lrg_01b.ydr',
-    'stream/an_weed_blue_med_01b.ydr',
-    'stream/an_weed_blue+hi.ytd',
+    'stream/blue/an_weed_blue.ytd',
+    'stream/blue/an_weed_blue_01_small_01b.ydr',
+    'stream/blue/an_weed_blue_lrg_01b.ydr',
+    'stream/blue/an_weed_blue_med_01b.ydr',
+    'stream/blue/an_weed_blue+hi.ytd',
+    ---------------Coca Plant----------------------
+    'stream/bzzz_plant_coca_a.ytyp',
+    'stream/coca/bzzz_plant_coca_a.ydr',
+    'stream/coca/bzzz_plant_coca_b.ydr',
+    'stream/coca/bzzz_plant_coca_c.ydr',
+
 }
 
+    ----------------------Tables-----------------------------------------
 data_file 'DLC_ITYP_REQUEST' 'stream/freeze_it-drugs_table.ytyp'
-data_file 'DLC_ITYP_REQUEST' 'stream/freeze_it-scripts_coke_table.ydr'
-data_file 'DLC_ITYP_REQUEST' 'stream/freeze_it-scripts_meth_table.ytyp'
-data_file 'DLC_ITYP_REQUEST' 'stream/freeze_it-scripts_weed_table.ydr'
-------------------------Lemon haze-------------------------------
-data_file 'DLC_ITYP_REQUEST' 'stream/an_weed_yellow.ytd'
-data_file 'DLC_ITYP_REQUEST' 'stream/an_weed_yellow_01_small_01b.ydr'
-data_file 'DLC_ITYP_REQUEST' 'stream/an_weed_yellow_lrg_01b.ydr'
-data_file 'DLC_ITYP_REQUEST' 'stream/an_weed_yellow_med_01b.ydr'
-data_file 'DLC_ITYP_REQUEST' 'stream/an_weed_yellow+hi.ytd'
+data_file 'DLC_ITYP_REQUEST' 'stream/tables/freeze_it-scripts_coke_table.ydr'
+data_file 'DLC_ITYP_REQUEST' 'stream/tables/freeze_it-scripts_meth_table.ydr'
+data_file 'DLC_ITYP_REQUEST' 'stream/tables/freeze_it-scripts_weed_table.ydr'
+data_file 'DLC_ITYP_REQUEST' 'stream/tables/freeze_it-scripts_empty_table.ydr'
+-------------------------Empty Pot--------------------------------
+data_file 'DLC_ITYP_REQUEST' 'stream/bzzz_growing_freepot_a.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/pot/bzzz_growing_freepot_b.ydr'
+data_file 'DLC_ITYP_REQUEST' 'stream/pot/bzzz_growing_freepot_textures.ydr'
+-------------------------Seedlings--------------------------------
+data_file 'DLC_ITYP_REQUEST' 'stream/bzzz_prop_seeds_000.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/seedling/bzzz_prop_seeds_003.ydr'
+------------------------Weed types-------------------------------
 data_file 'DLC_ITYP_REQUEST' 'stream/an_weed.ytyp'
+------------------------Lemon haze-------------------------------
+data_file 'DLC_ITYP_REQUEST' 'stream/yellow/an_weed_yellow.ytd'
+data_file 'DLC_ITYP_REQUEST' 'stream/yellow/an_weed_yellow_01_small_01b.ydr'
+data_file 'DLC_ITYP_REQUEST' 'stream/yellow/an_weed_yellow_lrg_01b.ydr'
+data_file 'DLC_ITYP_REQUEST' 'stream/yellow/an_weed_yellow_med_01b.ydr'
+data_file 'DLC_ITYP_REQUEST' 'stream/yellow/an_weed_yellow+hi.ytd'
 -------------------------Purple haze-------------------------------
-data_file 'DLC_ITYP_REQUEST' 'stream/an_weed_purple.ytd'
-data_file 'DLC_ITYP_REQUEST' 'stream/an_weed_purple_01_small_01b.ydr'
-data_file 'DLC_ITYP_REQUEST' 'stream/an_weed_purple_lrg_01b.ydr'
-data_file 'DLC_ITYP_REQUEST' 'stream/an_weed_purple_med_01b.ydr'
-data_file 'DLC_ITYP_REQUEST' 'stream/an_weed_purple+hi.ytd'
+data_file 'DLC_ITYP_REQUEST' 'stream/purple/an_weed_purple.ytd'
+data_file 'DLC_ITYP_REQUEST' 'stream/purple/an_weed_purple_01_small_01b.ydr'
+data_file 'DLC_ITYP_REQUEST' 'stream/purple/an_weed_purple_lrg_01b.ydr'
+data_file 'DLC_ITYP_REQUEST' 'stream/purple/an_weed_purple_med_01b.ydr'
+data_file 'DLC_ITYP_REQUEST' 'stream/purple/an_weed_purple+hi.ytd'
 -------------------------White Widow-------------------------------
-data_file 'DLC_ITYP_REQUEST' 'stream/an_weed_white.ytd'
-data_file 'DLC_ITYP_REQUEST' 'stream/an_weed_white_01_small_01b.ydr'
-data_file 'DLC_ITYP_REQUEST' 'stream/an_weed_white_lrg_01b.ydr'
-data_file 'DLC_ITYP_REQUEST' 'stream/an_weed_white_med_01b.ydr'
-data_file 'DLC_ITYP_REQUEST' 'stream/an_weed_white+hi.ytd'
+data_file 'DLC_ITYP_REQUEST' 'stream/white/an_weed_white.ytd'
+data_file 'DLC_ITYP_REQUEST' 'stream/white/an_weed_white_01_small_01b.ydr'
+data_file 'DLC_ITYP_REQUEST' 'stream/white/an_weed_white_lrg_01b.ydr'
+data_file 'DLC_ITYP_REQUEST' 'stream/white/an_weed_white_med_01b.ydr'
+data_file 'DLC_ITYP_REQUEST' 'stream/white/an_weed_white+hi.ytd'
 -------------------------Blue berry--------------------------------
-data_file 'DLC_ITYP_REQUEST' 'stream/an_weed_blue.ytd'
-data_file 'DLC_ITYP_REQUEST' 'stream/an_weed_blue_01_small_01b.ydr'
-data_file 'DLC_ITYP_REQUEST' 'stream/an_weed_blue_lrg_01b.ydr'
-data_file 'DLC_ITYP_REQUEST' 'stream/an_weed_blue_med_01b.ydr'
-data_file 'DLC_ITYP_REQUEST' 'stream/an_weed_blue+hi.ytd'
+data_file 'DLC_ITYP_REQUEST' 'stream/blue/an_weed_blue.ytd'
+data_file 'DLC_ITYP_REQUEST' 'stream/blue/an_weed_blue_01_small_01b.ydr'
+data_file 'DLC_ITYP_REQUEST' 'stream/blue/an_weed_blue_lrg_01b.ydr'
+data_file 'DLC_ITYP_REQUEST' 'stream/blue/an_weed_blue_med_01b.ydr'
+data_file 'DLC_ITYP_REQUEST' 'stream/blue/an_weed_blue+hi.ytd'
+-------------------------Coca Plant--------------------------------
+data_file 'DLC_ITYP_REQUEST' 'stream/bzzz_plant_coca_a.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/coca/bzzz_plant_coca_a.ydr'
+data_file 'DLC_ITYP_REQUEST' 'stream/coca/bzzz_plant_coca_b.ydr'
+data_file 'DLC_ITYP_REQUEST' 'stream/coca/bzzz_plant_coca_c.ydr'
+
 
 
 dependencies {
