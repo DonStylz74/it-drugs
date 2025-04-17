@@ -128,3 +128,20 @@ else
         end
     end
 end
+
+exports.it_bridge:CreateUsableItem('water_refill', function(source)
+    local source = source
+    local xPlayer = ESX.GetPlayerFromId(source)
+    if xPlayer.getInventoryItem('wateringcan_empty').count > 0 then
+        TriggerClientEvent('ox_lib:notify', source, {type = 'info', description = 'Refilling your watering can...'})
+        xPlayer.removeInventoryItem('water_refill', 1)
+        xPlayer.removeInventoryItem('wateringcan_empty', 1)
+        TriggerClientEvent('playWateringCanAnimation', source) -- Trigger the client event to play the animation
+        Citizen.Wait(5000) -- Wait for 4 seconds (4000 milliseconds)
+        xPlayer.addInventoryItem('watering_can', 1)
+        Citizen.Wait(1000) -- Wait for 1 second (1000 milliseconds)
+        TriggerClientEvent('ox_lib:notify', source, {type = 'success', description = 'You have refilled your watering can.'})
+    else
+        TriggerClientEvent('ox_lib:notify', source, {type = 'error', description = 'You need an empty watering can to use this item.'})
+    end
+end)
